@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+}
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html {
+  /* http://pxtoem.com/ */
+
+  /*  16px */
+  font-size: 100%;
+
+  /*  15px */
+  /* font-size: 93.8%;  */
+
+  /*  14px */
+  /* font-size: 87.5%; */
+
+  /*  12px */
+  /*  font-size: 75%;*/
+
+  /*  10px */
+  /*  font-size: 62.5%;*/
+}

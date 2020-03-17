@@ -1,0 +1,242 @@
+.button,
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  display: inline-block;
+  color: #333;
+  text-align: center;
+  font-weight: 500;
+  padding: 0.5em 1.5em;
+  margin-right: 0.5em;
+  text-decoration: none;
+  white-space: nowrap;
+  background-color: transparent;
+  border-radius: 4px;
+  border: 1px solid #bbb;
+  cursor: pointer;
+  box-shadow: inset 0 1px 3px rgba(255, 255, 255, 0.1);
+  background-color: #e6e6e6;
+  box-sizing: border-box;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Rounded Button */
+.button-rounded {
+  border-radius: 2em;
+}
+
+.button[disabled],
+.button-disabled,
+.button-disabled:hover,
+.button-disabled:focus,
+.button-disabled:active {
+  border: none;
+  background-image: none;
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  filter: alpha(opacity=40);
+  -khtml-opacity: 0.5;
+  -moz-opacity: 0.5;
+  opacity: 0.5;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.button.button-primary,
+button.button-primary,
+input[type="submit"].button-primary,
+input[type="reset"].button-primary,
+input[type="button"].button-primary {
+  color: #fff;
+  background-color: #2e9ff3;
+  border-color: #2e9ff3;
+}
+
+.button.button-success,
+button.button-success,
+input[type="submit"].button-success,
+input[type="reset"].button-success,
+input[type="button"].button-success {
+  color: #fff;
+  background: #15cb6e;
+  border-color: #15cb6e;
+}
+
+.button.button-error,
+button.button-error,
+input[type="submit"].button-error,
+input[type="reset"].button-error,
+input[type="button"].button-error {
+  color: #fff;
+  background: #e7142b;
+  border-color: #e7142b;
+}
+
+.button.button-warning,
+button.button-warning,
+input[type="submit"].button-warning,
+input[type="reset"].button-warning,
+input[type="button"].button-warning {
+  color: #fff;
+  background: #f9b801;
+  border-color: #f9b801;
+}
+
+.button.button-secondary,
+button.button-secondary,
+input[type="submit"].button-secondary,
+input[type="reset"].button-secondary,
+input[type="button"].button-secondary {
+  color: #fff;
+  background: #5d8afb;
+  border-color: #5d8afb;
+}
+
+button:hover,
+.button:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover,
+.button:focus {
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000',endColorstr='#1a000000',GradientType=0);
+  background-image: -webkit-gradient(
+    linear,
+    0 0,
+    0 100%,
+    from(transparent),
+    color-stop(50%, rgba(0, 0, 0, 0.05)),
+    to(rgba(0, 0, 0, 0.1))
+  );
+  background-image: -webkit-linear-gradient(
+    transparent,
+    rgba(0, 0, 0, 0.05) 50%,
+    rgba(0, 0, 0, 0.05)
+  );
+  background-image: -moz-linear-gradient(
+    top,
+    rgba(0, 0, 0, 0.05) 50%,
+    rgba(0, 0, 0, 0.05)
+  );
+  background-image: -o-linear-gradient(
+    transparent,
+    rgba(0, 0, 0, 0.05) 50%,
+    rgba(0, 0, 0, 0.05)
+  );
+  background-image: linear-gradient(
+    transparent,
+    rgba(0, 0, 0, 0.05) 50%,
+    rgba(0, 0, 0, 0.05)
+  );
+  outline: 0;
+}
+
+.button:active,
+button:active,
+.button.button-active,
+input[type="submit"]:active,
+input[type="reset"]:active,
+input[type="button"]:active {
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05) inset,
+    0 0 10px rgba(0, 0, 0, 0.05) inset;
+}
+
+.button.loading,
+.button.loading:hover,
+.button.loading:active,
+.button-rounded.loading,
+button.loading,
+button.loading:hover,
+button.loading:active {
+  background-color: #ffffff;
+  background-image: none;
+  color: #ffffff;
+  box-shadow: none;
+  position: relative;
+  cursor: wait;
+}
+
+.button.loading:before,
+.button-rounded.loading:before,
+button.loading:before {
+  margin: -12px 0 0 -12px;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  content: "";
+  -webkit-border-radius: 20px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 20px;
+  -moz-background-clip: padding;
+  border-radius: 20px;
+  background-clip: padding-box;
+  border: rgba(0, 0, 0, 0.1) 2px solid;
+  border-top-color: #333;
+  -webkit-animation: animation-rotate 750ms linear infinite;
+  -moz-animation: animation-rotate 750ms linear infinite;
+  -o-animation: animation-rotate 750ms linear infinite;
+  animation: animation-rotate 750ms linear infinite;
+}
+
+.button.button-primary.loading:before,
+button.button-primary.loading:before,
+input[type="submit"].button-primary.loading:before,
+input[type="reset"].button-primary.loading:before,
+input[type="button"].button-primary.loading:before {
+  border-top-color: #2e9ff3;
+}
+.button.button-success.loading:before,
+button.button-success.loading:before,
+input[type="submit"].button-success.loading:before,
+input[type="reset"].button-success.loading:before,
+input[type="button"].button-success.loading:before {
+  border-top-color: #15cb6e;
+}
+.button.button-error.loading:before,
+button.button-error.loading:before,
+input[type="submit"].button-error.loading:before,
+input[type="reset"].button-error.loading:before,
+input[type="button"].button-error.loading:before {
+  border-top-color: #e7142b;
+}
+.button.button-warning.loading:before,
+button.button-warning.loading:before,
+input[type="submit"].button-warning.loading:before,
+input[type="reset"].button-warning.loading:before,
+input[type="button"].button-warning.loading:before {
+  border-top-color: #f9b801;
+}
+.button.button-secondary.loading:before,
+button.button-secondary.loading:before,
+input[type="submit"].button-secondary.loading:before,
+input[type="reset"].button-secondary.loading:before,
+input[type="button"].button-secondary.loading:before {
+  border-top-color: #5d8afb;
+}
+
+@-webkit-keyframes animation-rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@-moz-keyframes animation-rotate {
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+@-o-keyframes animation-rotate {
+  100% {
+    -o-transform: rotate(360deg);
+  }
+}
+@keyframes animation-rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,306 @@
+.form-stacked input[type="text"],
+.form-stacked input[type="password"],
+.form-stacked input[type="email"],
+.form-stacked input[type="url"],
+.form-stacked input[type="date"],
+.form-stacked input[type="month"],
+.form-stacked input[type="time"],
+.form-stacked input[type="datetime"],
+.form-stacked input[type="datetime-local"],
+.form-stacked input[type="week"],
+.form-stacked input[type="number"],
+.form-stacked input[type="search"],
+.form-stacked input[type="tel"],
+.form-stacked input[type="color"],
+.form-stacked select,
+.form-stacked label,
+.form-stacked textarea {
+  display: block;
+  margin: 0.25em 0;
+}
+
+/*
+Need to separate out the :not() selector from the rest of the CSS 2.1 selectors
+since IE8 won't execute CSS that contains a CSS3 selector.
+*/
+.form-stacked input:not([type]) {
+  display: block;
+  margin: 0.25em 0;
+}
+.form-aligned input,
+.form-aligned textarea,
+.form-aligned select {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  vertical-align: middle;
+}
+.form-aligned textarea {
+  vertical-align: top;
+}
+
+/* Aligned Forms */
+.form-aligned .input-group {
+  margin-bottom: 0.5em;
+}
+.form-aligned .input-group label {
+  text-align: right;
+  display: inline-block;
+  vertical-align: middle;
+  width: 10em;
+  margin: 0 1em 0 0;
+}
+.form-aligned .action-group {
+  margin: 0 0 0 11em;
+}
+
+/* Rounded Inputs */
+.form input.input-rounded,
+.form .input-rounded {
+  border-radius: 2em;
+  padding: 0.5em 1em;
+}
+
+/* Grouped Inputs */
+.form fieldset.form-group {
+  margin-bottom: 0.5em;
+}
+.form .form-group input {
+  display: block;
+  padding: 10px;
+  margin: 0;
+  border-radius: 0;
+  position: relative;
+  top: -1px;
+}
+.form .form-group input:focus {
+  z-index: 2;
+}
+.form .form-group input:first-child {
+  top: 1px;
+  border-radius: 4px 4px 0 0;
+}
+.form .form-group input:last-child {
+  top: -2px;
+  border-radius: 0 0 4px 4px;
+}
+.form .form-group button {
+  margin: 0.35em 0;
+}
+
+.form .full-width {
+  width: 100%;
+}
+
+@media only screen and (max-width: 568px) {
+  .form-group input:not([type]),
+  .form-group input[type="text"],
+  .form-group input[type="password"],
+  .form-group input[type="email"],
+  .form-group input[type="url"],
+  .form-group input[type="date"],
+  .form-group input[type="month"],
+  .form-group input[type="time"],
+  .form-group input[type="datetime"],
+  .form-group input[type="datetime-local"],
+  .form-group input[type="week"],
+  .form-group input[type="number"],
+  .form-group input[type="search"],
+  .form-group input[type="tel"],
+  .form-group input[type="color"] {
+    margin-bottom: 0;
+  }
+
+  .form-aligned .input-group label {
+    margin-bottom: 0.3em;
+    text-align: left;
+    display: block;
+    width: 100%;
+  }
+
+  .form-aligned .action-group {
+    margin: 0;
+  }
+}
+
+/* Materialize */
+/* https://codepen.io/nathamanath/pen/ONxJWw */
+
+.material {
+  width: 100%;
+  padding-top: 1em;
+  position: relative;
+}
+.material .helper-text {
+  color: #888;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  font-size: 0.75em;
+  max-height: 0;
+}
+.material.invalid,
+.material .invalid {
+  color: red;
+  opacity: 1;
+}
+.material.invalid input:not([type="checkbox"]):not([type="radio"]),
+.material.invalid textarea {
+  border-color: red;
+}
+.material.invalid
+  input:not([type="checkbox"]):not([type="radio"])
+  ~ .helper-text,
+.material.invalid textarea ~ .helper-text {
+  color: red;
+  opacity: 1;
+}
+.material.invalid input:not([type="checkbox"]):not([type="radio"]):focus,
+.material.invalid textarea:focus {
+  border-color: red;
+}
+.material.invalid
+  input:not([type="checkbox"]):not([type="radio"]):focus
+  ~ label,
+.material.invalid textarea:focus ~ label {
+  color: red;
+}
+.material textarea {
+  resize: none;
+  height: auto;
+  min-height: 30px;
+  max-height: 200px;
+  overflow: hidden;
+}
+.material textarea:focus {
+  min-height: 60px;
+}
+.material input:not([type="checkbox"]):not([type="radio"]),
+.material textarea {
+  border: none;
+  width: 100%;
+  top: 20px;
+  border-bottom: 2px solid #888;
+  border-radius: 0;
+  transition: min-height 0.2s ease-in-out, border-color 0.2s ease-in-out;
+  height: 30px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.material
+  input:not([type="checkbox"]):not([type="radio"]):focus
+  ~ .helper-text.validation-error,
+.material textarea:focus ~ .helper-text.validation-error {
+  opacity: 0;
+}
+.material input:not([type="checkbox"]):not([type="radio"]):invalid,
+.material textarea:invalid {
+  box-shadow: none;
+}
+.material input:not([type="checkbox"]):not([type="radio"]):invalid ~ label,
+.material textarea:invalid ~ label {
+  transform: translateY(100%) scale(1);
+}
+.material input:not([type="checkbox"]):not([type="radio"]):focus,
+.material textarea:focus {
+  outline: none;
+  border-color: #2e9ff3;
+}
+.material input:not([type="checkbox"]):not([type="radio"]):focus ~ label,
+.material textarea:focus ~ label {
+  transform: translateY(0) scale(0.75);
+  color: #2e9ff3;
+}
+.material input:not([type="checkbox"]):not([type="radio"]):focus ~ .helper-text,
+.material textarea:focus ~ .helper-text {
+  opacity: 1;
+}
+.material label {
+  transform: translateY(0) scale(0.75);
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  z-index: 2;
+  transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
+  transform-origin: 0 0;
+  cursor: text;
+  color: #888;
+}
+
+.material label.normal {
+  transform: translateY(0) scale(1);
+  position: relative;
+}
+
+.material.has-persistent-helper .helper-text {
+  opacity: 1;
+}
+
+.material select {
+  height: 2.4em;
+  border: 1px solid #ccc;
+  background-color: white;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-shadow: inset 0 1px 3px #eee;
+  border-radius: 4px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.material select.full-width {
+  width: 100%;
+}
+
+.material input[type="checkbox"] {
+  position: relative;
+  top: -0.125rem;
+  margin: 0 0.25rem 0rem 0rem;
+  cursor: pointer;
+}
+.material input[type="checkbox"]:before {
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  content: "";
+  position: absolute;
+  left: -0.125em;
+  top: -0.125rem;
+  z-index: 1;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 2px solid #dddddd;
+  background: #ffffff;
+}
+.material input[type="checkbox"]:checked:before {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  height: 0.7rem;
+  border-color: #2e9ff3;
+  border-top-style: none;
+  border-right-style: none;
+}
+.material input[type="checkbox"]:after {
+  content: "";
+  position: absolute;
+  top: -0.125rem;
+  left: -0.125rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  background: #fff;
+  cursor: pointer;
+}
+
+.material input[type="radio"] {
+  position: relative;
+  margin: 0rem 0rem 0.5rem 0;
+  width: 1.1rem;
+  height: 1.1rem;
+  cursor: pointer;
+}
