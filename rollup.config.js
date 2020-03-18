@@ -25,7 +25,7 @@ export default {
   ],
   plugins: [
     postcss({
-      modules: true,
+      modules: false,
       minimize: true
     }),
     external({

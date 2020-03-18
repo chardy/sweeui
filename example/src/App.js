@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Button } from "sweeui";
+import { Button, Form, Fieldset, Input } from "sweeui";
 
 export default function App() {
   return (
@@ -27,6 +27,16 @@ export default function App() {
       <Button loading type="warning" size="xlarge">
         Button
       </Button>
+
+      <Form>
+        <Fieldset type="form-group">
+          <Input placeholder="Username" />
+          <Input placeholder="Password" type="password" />
+        </Fieldset>
+        <Fieldset type="action-group">
+          <Button type="primary">Submit</Button>
+        </Fieldset>
+      </Form>
     </div>
   );
 }

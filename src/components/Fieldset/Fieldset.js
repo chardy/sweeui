@@ -4,7 +4,8 @@ import PropTypes from "prop-types";
 import "./../Input/Input.css";
 
 export default function Fieldset({ type, children }) {
-  return <fieldset className={type}>{children}</fieldset>;
+  const classNameArray = [type].join(" ").trim();
+  return <fieldset className={classNameArray}>{children}</fieldset>;
 }
 Fieldset.propTypes = {
   children: PropTypes.node.isRequired,

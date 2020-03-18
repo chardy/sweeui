@@ -5,8 +5,9 @@ import "./Form.css";
 
 export default function Form({ onSubmit, type, loading, children }) {
   const formType = "" || type ? "form-" + type : null;
+  const classNameArray = ["form", formType].join(" ").trim();
   return (
-    <form className={`form ${formType}`} onSubmit={onSubmit}>
+    <form className={classNameArray} onSubmit={onSubmit}>
       {children}
     </form>
   );

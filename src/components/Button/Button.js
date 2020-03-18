@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import style from "./Button.css";
+import "./Button.css";
 
 export default function Button({
   color,
@@ -23,10 +23,10 @@ export default function Button({
   const buttonLoading = loading ? "loading" : "";
   const buttonRounded = rounded ? "button-rounded" : "";
   const classNameArray = [
-    style.button,
-    style[buttonType] || "",
-    style[buttonLoading] || "",
-    style[buttonRounded] || "",
+    "button",
+    buttonType || "",
+    buttonLoading || "",
+    buttonRounded || "",
     className || ""
   ]
     .join(" ")
