@@ -5,23 +5,28 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: [
-          'babel-loader',
-        ],
+        use: ["babel-loader"]
       },
       {
         test: /\.(s?)css$/,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
+        use: [
+          "style-loader",
+          {
+            loader: "css-loader",
+            options: {
+              modules: true
+            }
+          },
+          "sass-loader"
+        ]
       },
       {
         test: /\.(png|jpg|jpeg|svg|webp|gif)$/,
-        use: [
-          'file-loader',
-        ],
-      },
-    ],
+        use: ["file-loader"]
+      }
+    ]
   },
   resolve: {
-    extensions: ['.js', '.jsx'],
-  },
+    extensions: [".js", ".jsx"]
+  }
 };
