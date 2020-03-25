@@ -65,11 +65,7 @@ Button.defaultProps = {
   type: "",
   loading: false,
   rounded: false,
-  className: null,
-  onClick: event => {
-    // eslint-disable-next-line no-console
-    console.log("You have clicked me!", event.target);
-  }
+  className: null
 };
 Button.sizes = {
   small: "80%",

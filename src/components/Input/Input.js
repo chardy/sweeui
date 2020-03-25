@@ -3,29 +3,25 @@ import PropTypes from "prop-types";
 
 import "./Input.css";
 
-export default function Input({
-  onChange,
-  placeholder,
-  size,
-  ref,
-  type,
-  loading,
-  color
-}) {
-  const inputType = type;
-  const styles = {
-    color,
-    fontSize: Input.sizes[size]
-  };
-  return (
-    <input
-      style={styles}
-      type={inputType}
-      onChange={onChange}
-      placeholder={placeholder}
-    />
-  );
-}
+const Input = React.forwardRef(
+  ({ onChange, placeholder, size, type, loading, color, name }, ref) => {
+    const inputType = type;
+    const styles = {
+      color,
+      fontSize: Input.sizes[size]
+    };
+    return (
+      <input
+        style={styles}
+        type={inputType}
+        onChange={onChange}
+        placeholder={placeholder}
+        ref={ref}
+        name={name}
+      />
+    );
+  }
+);
 Input.propTypes = {
   type: PropTypes.oneOf([
     "text",
@@ -48,7 +44,8 @@ Input.propTypes = {
   value: PropTypes.func,
   defaultValue: PropTypes.func,
   ref: PropTypes.func,
-  placeholder: PropTypes.string
+  placeholder: PropTypes.string,
+  name: PropTypes.string
 };
 Input.defaultProps = {
   type: "text",
@@ -63,3 +60,5 @@ Input.sizes = {
   large: "150%",
   xlarge: "200%"
 };
+
+export default Input;
