@@ -12,11 +12,13 @@ export default function Button({
   loading,
   rounded,
   className,
+  fullWidth,
   children
 }) {
   const styles = {
     color,
-    fontSize: Button.sizes[size]
+    fontSize: Button.sizes[size],
+    width: fullWidth ? "100%" : "auto"
   };
 
   const buttonType = "" || (type ? "button-" + type : "");
@@ -58,6 +60,7 @@ Button.propTypes = {
   disabled: PropTypes.bool,
   loading: PropTypes.bool,
   rounded: PropTypes.bool,
+  fullWidth: PropTypes.bool,
   onClick: PropTypes.func
 };
 Button.defaultProps = {
@@ -65,7 +68,8 @@ Button.defaultProps = {
   type: "",
   loading: false,
   rounded: false,
-  className: null
+  className: null,
+  fullWidth: false
 };
 Button.sizes = {
   small: "80%",

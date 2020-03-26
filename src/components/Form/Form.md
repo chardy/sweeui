@@ -51,6 +51,21 @@ Form Fieldset Group:
     <Input placeholder="Password" type="password" />
   </Fieldset>
   <Fieldset type="action-group">
+    <Input id="remember" type="checkbox" />
+    <label htmlFor="remember">Remember me</label>
+  </Fieldset>
+  <br />
+  <Fieldset type="action-group">
+    <Input id="yes" type="radio" name="agree" />
+    <label htmlFor="yes">Yes</label> <Input id="no" type="radio" name="agree" />
+    <label htmlFor="no">No</label>
+  </Fieldset>
+  <br />
+  <Fieldset type="action-group">
+    <Input id="switch" type="switch" /> <label htmlFor="switch">Switch?</label>
+  </Fieldset>
+  <br />
+  <Fieldset type="action-group">
     <Button type="primary">Submit</Button>
   </Fieldset>
 </Form>

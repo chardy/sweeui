@@ -54,8 +54,8 @@ input[type="submit"].button-primary,
 input[type="reset"].button-primary,
 input[type="button"].button-primary {
   color: #fff;
-  background-color: #2e9ff3;
-  border-color: #2e9ff3;
+  background-color: #275efe;
+  border-color: #275efe;
 }
 
 .button.button-success,
@@ -94,8 +94,8 @@ input[type="submit"].button-secondary,
 input[type="reset"].button-secondary,
 input[type="button"].button-secondary {
   color: #fff;
-  background: #5d8afb;
-  border-color: #5d8afb;
+  background: #5a4fff;
+  border-color: #5a4fff;
 }
 
 button:hover,
@@ -190,7 +190,7 @@ button.button-primary.loading:before,
 input[type="submit"].button-primary.loading:before,
 input[type="reset"].button-primary.loading:before,
 input[type="button"].button-primary.loading:before {
-  border-top-color: #2e9ff3;
+  border-top-color: #275efe;
 }
 .button.button-success.loading:before,
 button.button-success.loading:before,

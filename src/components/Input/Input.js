@@ -4,20 +4,42 @@ import PropTypes from "prop-types";
 import "./Input.css";
 
 const Input = React.forwardRef(
-  ({ onChange, placeholder, size, type, loading, color, name }, ref) => {
-    const inputType = type;
+  (
+    {
+      id,
+      onChange,
+      placeholder,
+      size,
+      type,
+      loading,
+      color,
+      name,
+      autoComplete
+    },
+    ref
+  ) => {
+    let inputType = type;
+    let isSwitch = false;
+
+    if (inputType == "switch") {
+      inputType = "checkbox";
+      isSwitch = true;
+    }
     const styles = {
       color,
       fontSize: Input.sizes[size]
     };
     return (
       <input
+        id={id}
         style={styles}
         type={inputType}
         onChange={onChange}
         placeholder={placeholder}
         ref={ref}
         name={name}
+        className={isSwitch ? "switch" : ""}
+        autoComplete={autoComplete}
       />
     );
   }
@@ -37,7 +59,8 @@ Input.propTypes = {
     "number",
     "search",
     "tel",
-    "color"
+    "color",
+    "switch"
   ]),
   loading: PropTypes.bool,
   onChange: PropTypes.func,
@@ -45,13 +68,16 @@ Input.propTypes = {
   defaultValue: PropTypes.func,
   ref: PropTypes.func,
   placeholder: PropTypes.string,
-  name: PropTypes.string
+  name: PropTypes.string,
+  autoComplete: PropTypes.oneOf(["on", "off"]),
+  id: PropTypes.string
 };
 Input.defaultProps = {
   type: "text",
   size: "normal",
   loading: false,
-  color: "#000000"
+  color: "#000000",
+  autoComplete: "off"
 };
 Input.sizes = {
   small: "80%",
