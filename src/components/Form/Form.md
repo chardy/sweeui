@@ -65,6 +65,14 @@ Form Fieldset Group:
     <Input id="switch" type="switch" /> <label htmlFor="switch">Switch?</label>
   </Fieldset>
   <br />
+  <Fieldset>
+    <select id="multi-state">
+      <option>Singapore</option>
+      <option>Malaysia</option>
+      <option>Indonesia</option>
+    </select>
+  </Fieldset>
+  <br />
   <Fieldset type="action-group">
     <Button type="primary">Submit</Button>
   </Fieldset>

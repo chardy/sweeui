@@ -12,7 +12,6 @@ input[type="number"],
 input[type="search"],
 input[type="tel"],
 input[type="color"],
-select,
 textarea {
   padding: 0.5em 0.6em;
   display: inline-block;
@@ -25,6 +24,26 @@ textarea {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border-radius: 4px;
+  border: 1px solid #bbc1e1;
+  box-shadow: inset 0 1px 3px #eee;
+  transition: all 0.3s ease-in-out;
+  padding: 0.5em 1.8em 0.5em 0.6em;
+  font-size: inherit;
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAeCAYAAABuUU38AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAUxJREFUeNrM1sEJwkAQBdCsngXPHsQO9O5FS7AAMVYgdqAd2IGCDWgFnryLFQiCZ8EGnJUNimiyM/tnk4HNEAg/8y6ZmMRVqz9eUJvRaSbvutCZ347bXVJy/ZnvTmdJ862Me+hAbZCTs6GHpyUi1tTSvPnqTpoWZPUa7W7ncT3vK4h4zVejy8QzM3WhVUO8ykI6jOxoGA4ig3BLHcNFSCGqGAkig2yqgpEiMsjSfY9LxYQg7L6r0X6wS29YJiYQYecemY+wHrXD1+bklGhpAhBDeu/JfIVGxaAQ9sb8CI+CQSJ+QmJg0Ii/EE2MBiIXooHRQhRCkBhNhBcEhLkwf05ZCG8ICCOpk0MULmvDSY2M8UawIRExLIQIEgHDRoghihgRIgiigBEjgiFATBACAgFgghEwSAAGgoBCBBgYAg5hYKAIFYgHBo6w9RRgAFfy160QuV8NAAAAAElFTkSuQmCC");
+  background-size: 9px;
+  background-position: 90% center;
+  background-repeat: no-repeat;
+  min-width: 38px;
 }
 
 input[type="text"],
@@ -164,11 +183,7 @@ input[type="radio"]:focus:invalid:focus,
 input[type="checkbox"]:focus:invalid:focus {
   outline-color: #e9322d;
 }
-select {
-  height: 2.4em;
-  border: 1px solid #ccc;
-  background-color: white;
-}
+
 select[multiple] {
   height: auto;
 }
