@@ -5,6 +5,7 @@ import "./Button.css";
 
 export default function Button({
   color,
+  background,
   size,
   onClick,
   disabled,
@@ -17,6 +18,7 @@ export default function Button({
 }) {
   const styles = {
     color,
+    background,
     fontSize: Button.sizes[size],
     width: fullWidth ? "100%" : "auto"
   };
@@ -47,6 +49,7 @@ export default function Button({
 Button.propTypes = {
   children: PropTypes.node.isRequired,
   color: PropTypes.string,
+  background: PropTypes.string,
   size: PropTypes.oneOf(["small", "normal", "medium", "large", "xlarge"]),
   type: PropTypes.oneOf([
     "",

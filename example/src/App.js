@@ -5,7 +5,11 @@ import { Button, Form, Fieldset, Input } from "sweeui";
 export default function App() {
   return (
     <div>
-      <Button size="small">Button</Button>
+      <div className="grid-noGutter">
+        <div className="fixed-20" style={{backgroundColor: "#5850EC"}}>Test</div>
+        <div className="fixed-max" style={{backgroundColor: "#8DA2FB"}}>Another Test</div>
+      </div>
+      {/* <Button size="small">Button</Button>
       <Button size="normal">Button</Button>
       <Button size="medium">Button</Button>
       <Button size="large">Button</Button>
@@ -36,7 +40,7 @@ export default function App() {
         <Fieldset type="action-group">
           <Button type="primary">Submit</Button>
         </Fieldset>
-      </Form>
+      </Form> */}
     </div>
   );
 }
