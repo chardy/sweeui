@@ -7,6 +7,7 @@ export default function Box({
   margin,
   background,
   radius,
+  elevation,
   children,
 }) {
   let border = "none";
@@ -26,7 +27,33 @@ export default function Box({
   }
   if (variant == "card") {
     boxShadow =
-      "0px 2px 1px -2px rgba(0,0,0,0.12), 0px 1px 1px 0px rgba(0,0,0,0.12), 0px 0px 5px 0px rgba(0,0,0,0.23)";
+      "rgba(67, 90, 111, 0.3) 0px 0px 1px, rgba(67, 90, 111, 0.47) 0px 2px 4px -2px";
+  }
+
+  if (elevation) {
+    switch (elevation) {
+      case 0:
+        boxShadow = "rgba(67, 90, 111, 0.3) 0px 0px 1px";
+        break;
+      case 1:
+        boxShadow =
+          "rgba(67, 90, 111, 0.3) 0px 0px 1px, rgba(67, 90, 111, 0.47) 0px 2px 4px -2px";
+        break;
+      case 2:
+        boxShadow =
+          "rgba(67, 90, 111, 0.3) 0px 0px 1px, rgba(67, 90, 111, 0.47) 0px 5px 8px -4px";
+        break;
+      case 3:
+        boxShadow =
+          "rgba(67, 90, 111, 0.3) 0px 0px 1px, rgba(67, 90, 111, 0.47) 0px 8px 10px -4px";
+        break;
+      case 4:
+        boxShadow =
+          "rgba(67, 90, 111, 0.3) 0px 0px 1px, rgba(67, 90, 111, 0.47) 0px 16px 24px -8px";
+        break;
+      default:
+        boxShadow = "none";
+    }
   }
 
   return (
@@ -43,6 +70,7 @@ Box.propTypes = {
   margin: PropTypes.string,
   borderRadius: PropTypes.string,
   variant: PropTypes.oneOf(["default", "card", "dashed", "dotted", "outlined"]),
+  elevation: PropTypes.oneOf([0, 1, 2, 3, 4]),
   background: PropTypes.string,
 };
 Box.defaultProps = {
