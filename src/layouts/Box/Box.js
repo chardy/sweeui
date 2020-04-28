@@ -6,10 +6,12 @@ export default function Box({
   padding,
   margin,
   background,
-  children
+  radius,
+  children,
 }) {
   let border = "none";
   let boxShadow = "none";
+  let borderRadius = 0;
   if (variant == "outlined") {
     border = "1px solid rgba(0, 0, 0, 0.12)";
   }
@@ -19,13 +21,18 @@ export default function Box({
   if (variant == "dotted") {
     border = "1px dotted rgba(0, 0, 0, 0.62)";
   }
+  if (radius) {
+    borderRadius = radius;
+  }
   if (variant == "card") {
     boxShadow =
       "0px 2px 1px -2px rgba(0,0,0,0.12), 0px 1px 1px 0px rgba(0,0,0,0.12), 0px 0px 5px 0px rgba(0,0,0,0.23)";
   }
 
   return (
-    <div style={{ padding, margin, background, border, boxShadow }}>
+    <div
+      style={{ padding, margin, background, border, boxShadow, borderRadius }}
+    >
       {children}
     </div>
   );
@@ -34,12 +41,14 @@ Box.propTypes = {
   children: PropTypes.node.isRequired,
   padding: PropTypes.string,
   margin: PropTypes.string,
+  borderRadius: PropTypes.string,
   variant: PropTypes.oneOf(["default", "card", "dashed", "dotted", "outlined"]),
-  background: PropTypes.string
+  background: PropTypes.string,
 };
 Box.defaultProps = {
   variant: "default",
   padding: "10px",
   margin: "0",
-  background: "#FFFFFF"
+  borderRadius: "0px",
+  background: "#FFFFFF",
 };

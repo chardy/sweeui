@@ -14,44 +14,100 @@ export default function Col({
   resetOffset,
   first,
   last,
-  children
+  fixed,
+  fixedSize,
+  fixedXs,
+  fixedSm,
+  fixedMd,
+  fixedLg,
+  fullHeight,
+  fullHeightXsOff,
+  fullHeightSmOff,
+  fullHeightMdOff,
+  fullHeightLgOff,
+  children,
 }) {
   let className = "col";
   let leftOffset = "off-0";
   let rightOffset = "off-0";
-  if (col) {
-    className = "col-" + col;
-  }
-  if (xs) {
-    className = className + "_xs-" + xs;
-  }
-  if (sm) {
-    className = className + "_sm-" + sm;
-  }
-  if (md) {
-    className = className + "_md-" + md;
-  }
-  if (lg) {
-    className = className + "_lg-" + lg;
-  }
-  if (first) {
-    className = "col-first";
-  }
-  if (last) {
-    className = "col-last";
-  }
-  if (pushLeft) {
-    leftOffset = "off-" + pushLeft;
-  }
-  if (pushRight) {
-    rightOffset = "off-" + pushRight;
+  if (fixed) {
+    className = "fixed";
+    if (fixedSize) {
+      className = className + "-" + fixedSize;
+    } else {
+      className = className + "-10";
+    }
+
+    if (fixedXs) {
+      className = className + "_fxs-" + fixedXs;
+    }
+    if (fixedSm) {
+      className = className + "_fsm-" + fixedSm;
+    }
+    if (fixedMd) {
+      className = className + "_fmd-" + fixedMd;
+    }
+    if (fixedLg) {
+      className = className + "_flg-" + fixedLg;
+    }
+    if (fullHeight) {
+      className = className + "_fullHeight-on";
+    }
+    if (fullHeightXsOff) {
+      className = className + "_fullHeight_xs-off";
+    }
+    if (fullHeightSmOff) {
+      className = className + "_fullHeight_sm-off";
+    }
+    if (fullHeightMdOff) {
+      className = className + "_fullHeight_md-off";
+    }
+    if (fullHeightLgOff) {
+      className = className + "_fullHeight_lg-off";
+    }
+  } else {
+    if (col) {
+      className = "col-" + col;
+    }
+    if (xs) {
+      className = className + "_xs-" + xs;
+    }
+    if (sm) {
+      className = className + "_sm-" + sm;
+    }
+    if (md) {
+      className = className + "_md-" + md;
+    }
+    if (lg) {
+      className = className + "_lg-" + lg;
+    }
+    if (first) {
+      className = "col-first";
+    }
+    if (last) {
+      className = "col-last";
+    }
+    if (pushLeft) {
+      leftOffset = "off-" + pushLeft;
+    }
+    if (pushRight) {
+      rightOffset = "off-" + pushRight;
+    }
   }
 
-  return (
-    <div className={className} push-left={leftOffset} push-right={rightOffset}>
-      {children}
-    </div>
-  );
+  if (fixed) {
+    return <div className={className}>{children}</div>;
+  } else {
+    return (
+      <div
+        className={className}
+        push-left={leftOffset}
+        push-right={rightOffset}
+      >
+        {children}
+      </div>
+    );
+  }
 }
 Col.propTypes = {
   children: PropTypes.node.isRequired,
@@ -67,7 +123,7 @@ Col.propTypes = {
     "9",
     "10",
     "11",
-    "12"
+    "12",
   ]),
   xs: PropTypes.oneOf([
     "1",
@@ -81,7 +137,7 @@ Col.propTypes = {
     "9",
     "10",
     "11",
-    "12"
+    "12",
   ]),
   sm: PropTypes.oneOf([
     "1",
@@ -95,7 +151,7 @@ Col.propTypes = {
     "9",
     "10",
     "11",
-    "12"
+    "12",
   ]),
   md: PropTypes.oneOf([
     "1",
@@ -109,7 +165,7 @@ Col.propTypes = {
     "9",
     "10",
     "11",
-    "12"
+    "12",
   ]),
   lg: PropTypes.oneOf([
     "1",
@@ -123,7 +179,7 @@ Col.propTypes = {
     "9",
     "10",
     "11",
-    "12"
+    "12",
   ]),
   pushLeft: PropTypes.oneOf([
     "0",
@@ -137,7 +193,7 @@ Col.propTypes = {
     "8",
     "9",
     "10",
-    "11"
+    "11",
   ]),
   pushRight: PropTypes.oneOf([
     "0",
@@ -151,11 +207,74 @@ Col.propTypes = {
     "8",
     "9",
     "10",
-    "11"
+    "11",
   ]),
   resetOffset: PropTypes.bool,
   first: PropTypes.bool,
-  last: PropTypes.bool
+  last: PropTypes.bool,
+  fixed: PropTypes.bool,
+  fixedSize: PropTypes.oneOf([
+    "10",
+    "15",
+    "20",
+    "25",
+    "30",
+    "35",
+    "40",
+    "max",
+    "auto",
+  ]),
+  fixedLg: PropTypes.oneOf([
+    "10",
+    "15",
+    "20",
+    "25",
+    "30",
+    "35",
+    "40",
+    "max",
+    "auto",
+  ]),
+  fixedMd: PropTypes.oneOf([
+    "10",
+    "15",
+    "20",
+    "25",
+    "30",
+    "35",
+    "40",
+    "max",
+    "auto",
+  ]),
+  fixedSm: PropTypes.oneOf([
+    "10",
+    "15",
+    "20",
+    "25",
+    "30",
+    "35",
+    "40",
+    "max",
+    "auto",
+  ]),
+  fixedXs: PropTypes.oneOf([
+    "10",
+    "15",
+    "20",
+    "25",
+    "30",
+    "35",
+    "40",
+    "max",
+    "auto",
+  ]),
+  fullHeight: PropTypes.bool,
+  fullHeightXsOff: PropTypes.bool,
+  fullHeightSmOff: PropTypes.bool,
+  fullHeightMdOff: PropTypes.bool,
+  fullHeightLgOff: PropTypes.bool,
 };
 
-Col.defaultProps = {};
+Col.defaultProps = {
+  fixed: false,
+};

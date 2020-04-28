@@ -1043,8 +1043,12 @@
 [class*="fixed-"] {
   box-sizing: border-box;
   flex-direction: column;
-  height: 100vh;
   width: 0;
+  height: auto;
+}
+
+[class*="fullHeight-on"] {
+  height: 100vh;
 }
 
 [class*="grid-"][class*="-noGutter"] > [class*="fixed-"] {
@@ -1079,14 +1083,152 @@
   width: 0;
   flex: 1 1 0%;
 }
+[class*="grid"] > [class*="fixed-auto"] {
+  flex-basis: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+@media screen and (max-width: 80em) {
+  [class*="grid"] > [class*="_flg-10"] {
+    width: 10rem;
+  }
+  [class*="grid"] > [class*="_flg-15"] {
+    width: 15rem;
+  }
+  [class*="grid"] > [class*="_flg-20"] {
+    width: 20rem;
+  }
+  [class*="grid"] > [class*="_flg-25"] {
+    width: 25rem;
+  }
+  [class*="grid"] > [class*="_flg-30"] {
+    width: 30rem;
+  }
+  [class*="grid"] > [class*="_flg-35"] {
+    width: 35rem;
+  }
+  [class*="grid"] > [class*="_flg-40"] {
+    width: 40rem;
+  }
+  [class*="grid"] > [class*="_flg-max"] {
+    width: 0;
+    flex: 1 1 0%;
+  }
+  [class*="grid"] > [class*="_flg-auto"] {
+    flex-basis: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+  [class*="grid"] > [class*="fullHeight_lg-off"] {
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 64em) {
+  [class*="grid"] > [class*="_fmd-10"] {
+    width: 10rem;
+  }
+  [class*="grid"] > [class*="_fmd-15"] {
+    width: 15rem;
+  }
+  [class*="grid"] > [class*="_fmd-20"] {
+    width: 20rem;
+  }
+  [class*="grid"] > [class*="_fmd-25"] {
+    width: 25rem;
+  }
+  [class*="grid"] > [class*="_fmd-30"] {
+    width: 30rem;
+  }
+  [class*="grid"] > [class*="_fmd-35"] {
+    width: 35rem;
+  }
+  [class*="grid"] > [class*="_fmd-40"] {
+    width: 40rem;
+  }
+  [class*="grid"] > [class*="_fmd-max"] {
+    width: 0;
+    flex: 1 1 0%;
+  }
+  [class*="grid"] > [class*="_fmd-auto"] {
+    flex-basis: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+  [class*="grid"] > [class*="fullHeight_md-off"] {
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 48em) {
+  [class*="grid"] > [class*="_fsm-10"] {
+    width: 10rem;
+  }
+  [class*="grid"] > [class*="_fsm-15"] {
+    width: 15rem;
+  }
+  [class*="grid"] > [class*="_fsm-20"] {
+    width: 20rem;
+  }
+  [class*="grid"] > [class*="_fsm-25"] {
+    width: 25rem;
+  }
+  [class*="grid"] > [class*="_fsm-30"] {
+    width: 30rem;
+  }
+  [class*="grid"] > [class*="_fsm-35"] {
+    width: 35rem;
+  }
+  [class*="grid"] > [class*="_fsm-40"] {
+    width: 40rem;
+  }
+  [class*="grid"] > [class*="_fsm-max"] {
+    width: 0;
+    flex: 1 1 0%;
+  }
+  [class*="grid"] > [class*="_fsm-auto"] {
+    flex-basis: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+  [class*="grid"] > [class*="fullHeight_sm-off"] {
+    height: auto;
+  }
+}
 
 @media screen and (max-width: 35.5em) {
-  [class*="grid"] > [class*="fixed-10"], [class*="grid"] > [class*="fixed-15"], [class*="grid"] > [class*="fixed-20"], [class*="grid"] > [class*="fixed-25"],[class*="grid"] > [class*="fixed-30"], [class*="grid"] > [class*="fixed-35"], [class*="grid"] > [class*="fixed-40"] {
-    flex-basis: 100%;
-    max-width: 100%;
+  [class*="grid"] > [class*="_fxs-10"] {
+    width: 10rem;
   }
-  [class*="grid"] > [class*="fixed-max"] {
+  [class*="grid"] > [class*="_fxs-15"] {
+    width: 15rem;
+  }
+  [class*="grid"] > [class*="_fxs-20"] {
+    width: 20rem;
+  }
+  [class*="grid"] > [class*="_fxs-25"] {
+    width: 25rem;
+  }
+  [class*="grid"] > [class*="_fxs-30"] {
+    width: 30rem;
+  }
+  [class*="grid"] > [class*="_fxs-35"] {
+    width: 35rem;
+  }
+  [class*="grid"] > [class*="_fxs-40"] {
+    width: 40rem;
+  }
+  [class*="grid"] > [class*="_fxs-max"] {
+    width: 0;
+    flex: 1 1 0%;
+  }
+  [class*="grid"] > [class*="_fxs-auto"] {
     flex-basis: 100%;
     max-width: 100%;
+    height: auto;
+  }
+  [class*="grid"] > [class*="fullHeight_xs-off"] {
+    height: auto;
   }
 }

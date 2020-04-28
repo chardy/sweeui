@@ -1,14 +1,22 @@
 import React from "react";
 
-import { Button, Form, Fieldset, Input } from "sweeui";
+import { Grid, Col, Button, Form, Fieldset, Input, Box } from "sweeui";
 
 export default function App() {
   return (
     <div>
-      <div className="grid-noGutter">
-        <div className="fixed-20" style={{backgroundColor: "#5850EC"}}>Test</div>
-        <div className="fixed-max" style={{backgroundColor: "#8DA2FB"}}>Another Test</div>
-      </div>
+      <Grid noGutter>
+        <Col fixed fixedSize="10" fixedXs="20" fullHeight fullHeightXsOff>
+          <Box variant="card" margin="10px" radius="5px">
+            Test
+          </Box>
+        </Col>
+        <Col fixed fixedSize="max">
+          <Box variant="card" margin="10px" radius="5px">
+            Test 2
+          </Box>
+        </Col>
+      </Grid>
       {/* <Button size="small">Button</Button>
       <Button size="normal">Button</Button>
       <Button size="medium">Button</Button>
