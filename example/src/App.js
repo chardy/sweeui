@@ -16,6 +16,11 @@ export default function App() {
             Test 2
           </Box>
         </Col>
+        <Col fixed fixedSize="10" fixedXs="20" fullHeight fullHeightXsOff>
+          <Box variant="card" margin="10px" radius="5px">
+            Test
+          </Box>
+        </Col>
       </Grid>
       {/* <Button size="small">Button</Button>
       <Button size="normal">Button</Button>

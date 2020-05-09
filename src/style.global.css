@@ -8,9 +8,9 @@
 
 html {
   /* http://pxtoem.com/ */
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica,
-    Arial, sans-serif;
-
+  /* font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica,
+    Arial, sans-serif; */
+  font-family: inherit;
   /*  16px */
   font-size: 100%;
 

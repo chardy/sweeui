@@ -72,6 +72,7 @@ since IE8 won't execute CSS that contains a CSS3 selector.
   border-radius: 0;
   position: relative;
   top: -1px;
+  width: 100%;
 }
 .form .form-group input:focus {
   z-index: 2;

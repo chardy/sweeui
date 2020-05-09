@@ -6,13 +6,12 @@ export default function Box({
   padding,
   margin,
   background,
-  radius,
+  borderRadius,
   elevation,
   children,
 }) {
   let border = "none";
   let boxShadow = "none";
-  let borderRadius = 0;
   if (variant == "outlined") {
     border = "1px solid rgba(0, 0, 0, 0.12)";
   }
@@ -22,10 +21,9 @@ export default function Box({
   if (variant == "dotted") {
     border = "1px dotted rgba(0, 0, 0, 0.62)";
   }
-  if (radius) {
-    borderRadius = radius;
-  }
+
   if (variant == "card") {
+    border = "1px solid #bbc1e1";
     boxShadow =
       "rgba(67, 90, 111, 0.3) 0px 0px 1px, rgba(67, 90, 111, 0.47) 0px 2px 4px -2px";
   }
