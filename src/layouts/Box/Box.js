@@ -56,7 +56,15 @@ export default function Box({
 
   return (
     <div
-      style={{ padding, margin, background, border, boxShadow, borderRadius }}
+      style={{
+        padding,
+        margin,
+        background,
+        border,
+        boxShadow,
+        borderRadius,
+        overflow: "hidden",
+      }}
     >
       {children}
     </div>
