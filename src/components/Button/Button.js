@@ -14,24 +14,24 @@ export default function Button({
   rounded,
   className,
   fullWidth,
-  children
+  children,
 }) {
   const styles = {
     color,
     background,
     fontSize: Button.sizes[size],
-    width: fullWidth ? "100%" : "auto"
+    width: fullWidth ? "100%" : "auto",
   };
 
-  const buttonType = "" || (type ? "button-" + type : "");
+  const buttonType = "" || (type ? "sui-button-" + type : "");
   const buttonLoading = loading ? "loading" : "";
-  const buttonRounded = rounded ? "button-rounded" : "";
+  const buttonRounded = rounded ? "sui-button-rounded" : "";
   const classNameArray = [
     "button",
     buttonType || "",
     buttonLoading || "",
     buttonRounded || "",
-    className || ""
+    className || "",
   ]
     .join(" ")
     .trim();
@@ -57,14 +57,14 @@ Button.propTypes = {
     "success",
     "error",
     "warning",
-    "secondary"
+    "secondary",
   ]),
   className: PropTypes.string,
   disabled: PropTypes.bool,
   loading: PropTypes.bool,
   rounded: PropTypes.bool,
   fullWidth: PropTypes.bool,
-  onClick: PropTypes.func
+  onClick: PropTypes.func,
 };
 Button.defaultProps = {
   size: "normal",
@@ -72,12 +72,12 @@ Button.defaultProps = {
   loading: false,
   rounded: false,
   className: null,
-  fullWidth: false
+  fullWidth: false,
 };
 Button.sizes = {
   small: "80%",
   normal: "100%",
   medium: "125%",
   large: "150%",
-  xlarge: "200%"
+  xlarge: "200%",
 };

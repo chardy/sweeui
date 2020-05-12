@@ -1,4 +1,4 @@
-.button,
+.sui-button,
 button,
 input[type="submit"],
 input[type="reset"],
@@ -28,16 +28,16 @@ input[type="button"] {
 }
 
 /* Rounded Button */
-.button-rounded {
+.sui-button-rounded {
   border-radius: 2em;
 }
 
 button[disabled],
-.button[disabled],
-.button-disabled,
-.button-disabled:hover,
-.button-disabled:focus,
-.button-disabled:active {
+.sui-button[disabled],
+.sui-button-disabled,
+.sui-button-disabled:hover,
+.sui-button-disabled:focus,
+.sui-button-disabled:active {
   border: none;
   background-image: none;
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
@@ -49,62 +49,62 @@ button[disabled],
   box-shadow: none;
 }
 
-.button.button-primary,
-button.button-primary,
-input[type="submit"].button-primary,
-input[type="reset"].button-primary,
-input[type="button"].button-primary {
+.sui-button.sui-button-primary,
+button.sui-button-primary,
+input[type="submit"].sui-button-primary,
+input[type="reset"].sui-button-primary,
+input[type="button"].sui-button-primary {
   color: #fff;
   background-color: #275efe;
   border-color: #275efe;
 }
 
-.button.button-success,
-button.button-success,
-input[type="submit"].button-success,
-input[type="reset"].button-success,
-input[type="button"].button-success {
+.sui-button.sui-button-success,
+button.sui-button-success,
+input[type="submit"].sui-button-success,
+input[type="reset"].sui-button-success,
+input[type="button"].sui-button-success {
   color: #fff;
   background: #15cb6e;
   border-color: #15cb6e;
 }
 
-.button.button-error,
-button.button-error,
-input[type="submit"].button-error,
-input[type="reset"].button-error,
-input[type="button"].button-error {
+.sui-button.sui-button-error,
+button.sui-button-error,
+input[type="submit"].sui-button-error,
+input[type="reset"].sui-button-error,
+input[type="button"].sui-button-error {
   color: #fff;
   background: #e7142b;
   border-color: #e7142b;
 }
 
-.button.button-warning,
-button.button-warning,
-input[type="submit"].button-warning,
-input[type="reset"].button-warning,
-input[type="button"].button-warning {
+.sui-button.sui-button-warning,
+button.sui-button-warning,
+input[type="submit"].sui-button-warning,
+input[type="reset"].sui-button-warning,
+input[type="button"].sui-button-warning {
   color: #fff;
   background: #f9b801;
   border-color: #f9b801;
 }
 
-.button.button-secondary,
-button.button-secondary,
-input[type="submit"].button-secondary,
-input[type="reset"].button-secondary,
-input[type="button"].button-secondary {
+.sui-button.sui-button-secondary,
+button.sui-button-secondary,
+input[type="submit"].sui-button-secondary,
+input[type="reset"].sui-button-secondary,
+input[type="button"].sui-button-secondary {
   color: #fff;
   background: #5a4fff;
   border-color: #5a4fff;
 }
 
 button:hover,
-.button:hover,
+.sui-button:hover,
 input[type="submit"]:hover,
 input[type="reset"]:hover,
 input[type="button"]:hover,
-.button:focus {
+.sui-button:focus {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000',endColorstr='#1a000000',GradientType=0);
   background-image: -webkit-gradient(
     linear,
@@ -137,9 +137,9 @@ input[type="button"]:hover,
   outline: 0;
 }
 
-.button:active,
+.sui-button:active,
 button:active,
-.button.button-active,
+.sui-button.sui-button-active,
 input[type="submit"]:active,
 input[type="reset"]:active,
 input[type="button"]:active {
@@ -147,10 +147,10 @@ input[type="button"]:active {
     0 0 10px rgba(0, 0, 0, 0.05) inset;
 }
 
-.button.loading,
-.button.loading:hover,
-.button.loading:active,
-.button-rounded.loading,
+.sui-button.loading,
+.sui-button.loading:hover,
+.sui-button.loading:active,
+.sui-button-rounded.loading,
 button.loading,
 button.loading:hover,
 button.loading:active {
@@ -162,8 +162,8 @@ button.loading:active {
   cursor: wait;
 }
 
-.button.loading:before,
-.button-rounded.loading:before,
+.sui-button.loading:before,
+.sui-button-rounded.loading:before,
 button.loading:before {
   margin: -12px 0 0 -12px;
   width: 20px;
@@ -186,39 +186,39 @@ button.loading:before {
   animation: animation-rotate 750ms linear infinite;
 }
 
-.button.button-primary.loading:before,
-button.button-primary.loading:before,
-input[type="submit"].button-primary.loading:before,
-input[type="reset"].button-primary.loading:before,
-input[type="button"].button-primary.loading:before {
+.sui-button.sui-button-primary.loading:before,
+button.sui-button-primary.loading:before,
+input[type="submit"].sui-button-primary.loading:before,
+input[type="reset"].sui-button-primary.loading:before,
+input[type="button"].sui-button-primary.loading:before {
   border-top-color: #275efe;
 }
-.button.button-success.loading:before,
-button.button-success.loading:before,
-input[type="submit"].button-success.loading:before,
-input[type="reset"].button-success.loading:before,
-input[type="button"].button-success.loading:before {
+.sui-button.sui-button-success.loading:before,
+button.sui-button-success.loading:before,
+input[type="submit"].sui-button-success.loading:before,
+input[type="reset"].sui-button-success.loading:before,
+input[type="button"].sui-button-success.loading:before {
   border-top-color: #15cb6e;
 }
-.button.button-error.loading:before,
-button.button-error.loading:before,
-input[type="submit"].button-error.loading:before,
-input[type="reset"].button-error.loading:before,
-input[type="button"].button-error.loading:before {
+.sui-button.sui-button-error.loading:before,
+button.sui-button-error.loading:before,
+input[type="submit"].sui-button-error.loading:before,
+input[type="reset"].sui-button-error.loading:before,
+input[type="button"].sui-button-error.loading:before {
   border-top-color: #e7142b;
 }
-.button.button-warning.loading:before,
-button.button-warning.loading:before,
-input[type="submit"].button-warning.loading:before,
-input[type="reset"].button-warning.loading:before,
-input[type="button"].button-warning.loading:before {
+.sui-button.sui-button-warning.loading:before,
+button.sui-button-warning.loading:before,
+input[type="submit"].sui-button-warning.loading:before,
+input[type="reset"].sui-button-warning.loading:before,
+input[type="button"].sui-button-warning.loading:before {
   border-top-color: #f9b801;
 }
-.button.button-secondary.loading:before,
+.sui-button.sui-button-secondary.loading:before,
 button.button-secondary.loading:before,
-input[type="submit"].button-secondary.loading:before,
-input[type="reset"].button-secondary.loading:before,
-input[type="button"].button-secondary.loading:before {
+input[type="submit"].sui-button-secondary.loading:before,
+input[type="reset"].sui-button-secondary.loading:before,
+input[type="button"].sui-button-secondary.loading:before {
   border-top-color: #5d8afb;
 }
 
