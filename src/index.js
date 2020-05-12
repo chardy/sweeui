@@ -7,7 +7,8 @@ import Fieldset from "./components/Fieldset/Fieldset";
 import Grid from "./layouts/Grid/Grid";
 import Col from "./layouts/Col/Col";
 import Box from "./layouts/Box/Box";
+import Flex from "./layouts/Flex/Flex";
 import Wrapper from "./layouts/Wrapper/Wrapper";
 import Section from "./layouts/Section/Section";
 
-export { Button, Form, Input, Fieldset, Grid, Col, Box, Wrapper, Section };
+export { Button, Form, Input, Fieldset, Grid, Col, Box, Flex, Wrapper, Section };
