@@ -1,7 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { classNames, classNameObject } from "../../utils/format";
 
 export default function Box({
+  className,
   variant,
   padding,
   margin,
@@ -10,6 +12,8 @@ export default function Box({
   elevation,
   children,
 }) {
+  let classes = { ...classNameObject(className) }
+  
   let border = "none";
   let boxShadow = "none";
   if (variant == "outlined") {
@@ -56,6 +60,7 @@ export default function Box({
 
   return (
     <div
+      className={classNames(classes)}
       style={{
         padding,
         margin,
@@ -72,6 +77,7 @@ export default function Box({
 }
 Box.propTypes = {
   children: PropTypes.node.isRequired,
+  className: PropTypes.string,
   padding: PropTypes.string,
   margin: PropTypes.string,
   borderRadius: PropTypes.string,
@@ -80,6 +86,7 @@ Box.propTypes = {
   background: PropTypes.string,
 };
 Box.defaultProps = {
+  className: null,
   variant: "default",
   padding: "10px",
   margin: "0",
