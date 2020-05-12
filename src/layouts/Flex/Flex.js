@@ -15,6 +15,8 @@ export default function Flex({
   overflowY,
   align,
   justify,
+  gutter,
+  wrap,
   onClick,
 }) {
   let classes = { ...classNameObject(className), "sui-flex": true }
@@ -57,7 +59,6 @@ export default function Flex({
     styleAttrs.height = `${height}px`
     styleAttrs.minHeight = `${height}px`
     styleAttrs.maxHeight = `${height}px`
-    classes["sui-flex-overflow-y"] = true
   }
 
   if (!!width && typeof width === "string") {
@@ -74,10 +75,18 @@ export default function Flex({
     }
   }
 
+  if (wrap) { classes["sui-flex-wrap"] = true }
   if (overflowY) { classes["sui-flex-overflow-y"] = true }
 
+  const [gutterX, gutterY] = gutter || []
+  if (!!gutterX) { classes[`sui-flex-gutter-x${gutterX}`] = true }
+  if (!!gutterY) { classes[`sui-flex-gutter-y${gutterY}`] = true }
+
+  let fns = {}
+  if (typeof onClick === 'function') { fns.onClick = onClick }
+
   return (
-    <div className={classNames(classes)} style={styleAttrs} onClick={onClick}>
+    <div className={classNames(classes)} style={styleAttrs} {...fns}>
       {children}
     </div>
   );
@@ -94,6 +103,8 @@ Flex.propTypes = {
   overflowY: PropTypes.bool,
   align: PropTypes.oneOf(["top", "middle", "bottom"]),
   justify: PropTypes.oneOf(["start", "center", "end", "space-between"]),
+  gutter: PropTypes.arrayOf(PropTypes.oneOf([0,4,8,16,24,32,40])),
+  wrap: PropTypes.bool,
   onClick: PropTypes.func
 };
 
@@ -107,5 +118,7 @@ Flex.defaultProps = {
   overflowY: false,
   align: "top",
   justify: "start",
+  gutter: [0,0],
+  wrap: false,
   onClick: () => {}
 };
