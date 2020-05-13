@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { classNames, classNameObject } from "../../utils/format";
 
-import "./../flex.css";
+import "./flex.css";
 
 export default function Flex({
   children,
