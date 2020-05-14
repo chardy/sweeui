@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+::placeholder {
+  color: var(--placeholder-color);
+}
+
 html {
   /* http://pxtoem.com/ */
   /* font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica,
@@ -25,4 +29,9 @@ html {
 
   /*  10px */
   /*  font-size: 62.5%;*/
+
+  /* color theme */
+  --primary-color: #275efe;
+  --input-border-color: #BBC1E1;
+  --placeholder-color: #AAAAAA;
 }

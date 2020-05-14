@@ -55,8 +55,8 @@ input[type="submit"].button-primary,
 input[type="reset"].button-primary,
 input[type="button"].button-primary {
   color: #fff;
-  background-color: #275efe;
-  border-color: #275efe;
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
 }
 
 .button.button-success,
@@ -191,7 +191,7 @@ button.button-primary.loading:before,
 input[type="submit"].button-primary.loading:before,
 input[type="reset"].button-primary.loading:before,
 input[type="button"].button-primary.loading:before {
-  border-top-color: #275efe;
+  border-top-color: var(--primary-color);
 }
 .button.button-success.loading:before,
 button.button-success.loading:before,
