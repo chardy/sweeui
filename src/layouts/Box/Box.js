@@ -27,7 +27,7 @@ export default function Box({
   }
 
   if (variant == "card") {
-    border = "1px solid #bbc1e1";
+    border = "1px solid var(--input-border-color)";
     boxShadow =
       "rgba(67, 90, 111, 0.3) 0px 0px 1px, rgba(67, 90, 111, 0.47) 0px 2px 4px -2px";
   }
