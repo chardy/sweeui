@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-
-import "./../grid.css";
+import gridModule from '../Grid/Grid.module.css'
 
 export default function Col({
   col,
@@ -27,6 +26,8 @@ export default function Col({
   fullHeightLgOff,
   children,
 }) {
+  String.prototype.mod = function() { return !!gridModule? gridModule[this] : this }
+
   let className = "col";
   let leftOffset = "off-0";
   let rightOffset = "off-0";
@@ -96,11 +97,11 @@ export default function Col({
   }
 
   if (fixed) {
-    return <div className={className}>{children}</div>;
+    return <div className={className.mod()}>{children}</div>;
   } else {
     return (
       <div
-        className={className}
+        className={className.mod()}
         push-left={leftOffset}
         push-right={rightOffset}
       >

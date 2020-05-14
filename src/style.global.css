@@ -8,6 +8,7 @@
 
 ::placeholder {
   color: var(--placeholder-color);
+  font-weight: var(--placeholder-font-weight);
 }
 
 html {
@@ -34,6 +35,7 @@ html {
   --primary-color: #275efe;
   --input-border-color: #BBC1E1;
   --placeholder-color: #AAAAAA;
+  --placeholder-font-weight: 300;
 }
 
 .full-width { width: 100%; }

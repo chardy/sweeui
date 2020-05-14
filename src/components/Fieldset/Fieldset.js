@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import "./../Input/Input.css";
+import "./../Input/Input.module.css";
 
 export default function Fieldset({ type, padding, children }) {
   const classNameArray = [type].join(" ").trim();
