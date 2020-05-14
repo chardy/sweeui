@@ -1,8 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { classNames, classNameObject } from "../../utils/format";
-
-import "./flex.css";
+import flexModule from './Flex.module.css'
 
 export default function Flex({
   children,
@@ -21,49 +20,51 @@ export default function Flex({
   wrap,
   onClick,
 }) {
-  let classes = { ...classNameObject(className), "sui-flex": true }
+  String.prototype.mod = function() { return !!flexModule? flexModule[this] : this }
+
+  let classes = { ...classNameObject(className), ["sui-flex".mod()]: true }
   let styleAttrs = {}
 
   if (direction === "vertical") {
-    classes["sui-flex-vertical"] = true
-    
+    classes["sui-flex-vertical".mod()] = true
+
     if (align === "top") {
-      classes["sui-flex-start"] = true
+      classes["sui-flex-start".mod()] = true
     } else if (align === "middle") {
-      classes["sui-flex-center"] = true
+      classes["sui-flex-center".mod()] = true
     } else if (align === "bottom") {
-      classes["sui-flex-end"] = true
+      classes["sui-flex-end".mod()] = true
     }
 
     if (justify === "start") {
-      classes["sui-flex-top"] = true
+      classes["sui-flex-top".mod()] = true
     } else if (justify === "center") {
-      classes["sui-flex-middle"] = true
+      classes["sui-flex-middle".mod()] = true
     } else if (justify === "end") {
-      classes["sui-flex-bottom"] = true
+      classes["sui-flex-bottom".mod()] = true
     }
   } else {
     if (align === "top") {
-      classes["sui-flex-top"] = true
+      classes["sui-flex-top".mod()] = true
     } else if (align === "middle") {
-      classes["sui-flex-middle"] = true
+      classes["sui-flex-middle".mod()] = true
     } else if (align === "bottom") {
-      classes["sui-flex-bottom"] = true
+      classes["sui-flex-bottom".mod()] = true
     }
 
     if (justify === "start") {
-      classes["sui-flex-start"] = true
+      classes["sui-flex-start".mod()] = true
     } else if (justify === "center") {
-      classes["sui-flex-center"] = true
+      classes["sui-flex-center".mod()] = true
     } else if (justify === "end") {
-      classes["sui-flex-end"] = true
+      classes["sui-flex-end".mod()] = true
     } else if (justify === "space-between") {
-      classes["sui-flex-between"] = true
+      classes["sui-flex-between".mod()] = true
     }
   }
 
-  if (grow) { classes["sui-flex-grow"] = true }
-  if (!flex) { classes["sui-flex-hidden"] = true }
+  if (grow) { classes["sui-flex-grow".mod()] = true }
+  if (!flex) { classes["sui-flex-hidden".mod()] = true }
 
   if (!!height) {
     styleAttrs.height = `${height}px`
@@ -73,7 +74,7 @@ export default function Flex({
 
   if (!!width && typeof width === "string") {
     if (width === "max") {
-      classes["sui-flex-grow"] = true
+      classes["sui-flex-grow".mod()] = true
     } else if (["em", "px", "rem", "%"].some(unit => width.includes(unit))) {
       styleAttrs.width = width
       styleAttrs.minWidth = width
@@ -89,19 +90,19 @@ export default function Flex({
     styleAttrs.background = background
   }
 
-  if (wrap) { classes["sui-flex-wrap"] = true }
-  if (overflowX) { classes["sui-flex-overflow-x"] = true }
-  if (overflowY) { classes["sui-flex-overflow-y"] = true }
+  if (wrap) { classes["sui-flex-wrap".mod()] = true }
+  if (overflowX) { classes["sui-flex-overflow-x".mod()] = true }
+  if (overflowY) { classes["sui-flex-overflow-y".mod()] = true }
 
   const [gutterX, gutterY] = gutter || []
-  if (!!gutterX) { classes[`sui-flex-gutter-x${gutterX}`] = true }
-  if (!!gutterY) { classes[`sui-flex-gutter-y${gutterY}`] = true }
+  if (!!gutterX) { classes[`sui-flex-gutter-x${gutterX}`.mod()] = true }
+  if (!!gutterY) { classes[`sui-flex-gutter-y${gutterY}`.mod()] = true }
 
   let fns = {}
   if (typeof onClick === 'function') { fns.onClick = onClick }
 
   return (
-    <div className={classNames(classes)} style={styleAttrs} {...fns}>
+    <div className={classNames(classes, flexModule)} style={styleAttrs} {...fns}>
       {children}
     </div>
   );
