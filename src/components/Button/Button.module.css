@@ -32,6 +32,13 @@ input[type="button"] {
   border-radius: 2em;
 }
 
+/* Ghost Button */
+.button-ghost {
+  background: transparent;
+  border: transparent;
+  box-shadow: none;
+}
+
 button[disabled],
 .button[disabled],
 .button-disabled,

@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-
-import "./Button.css";
+import buttonModule from './Button.module.css'
 
 export default function Button({
   color,
@@ -16,6 +15,8 @@ export default function Button({
   fullWidth,
   children
 }) {
+  String.prototype.mod = function() { return !!buttonModule? buttonModule[this] : this }
+
   const styles = {
     color,
     background,
@@ -23,11 +24,11 @@ export default function Button({
     width: fullWidth ? "100%" : "auto"
   };
 
-  const buttonType = "" || (type ? "button-" + type : "");
-  const buttonLoading = loading ? "loading" : "";
-  const buttonRounded = rounded ? "button-rounded" : "";
+  const buttonType = "" || (type ? ("button-" + type).mod() : "");
+  const buttonLoading = loading ? "loading".mod() : "";
+  const buttonRounded = rounded ? "button-rounded".mod() : "";
   const classNameArray = [
-    "button",
+    "button".mod(),
     buttonType || "",
     buttonLoading || "",
     buttonRounded || "",

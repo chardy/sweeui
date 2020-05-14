@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-
-import "./Input.css";
+import inputModule from './Input.module.css'
 
 const Input = React.forwardRef(
   (
@@ -18,6 +17,8 @@ const Input = React.forwardRef(
     },
     ref
   ) => {
+    String.prototype.mod = function() { return !!inputModule? inputModule[this] : this }
+
     let inputType = type;
     let isSwitch = false;
 
@@ -38,7 +39,7 @@ const Input = React.forwardRef(
         placeholder={placeholder}
         ref={ref}
         name={name}
-        className={isSwitch ? "switch" : ""}
+        className={isSwitch ? "switch".mod() : ""}
         autoComplete={autoComplete}
       />
     );

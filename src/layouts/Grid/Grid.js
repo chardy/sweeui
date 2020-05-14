@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-
-import "./../grid.css";
+import gridModule from './Grid.module.css'
 
 export default function Grid({
   col,
@@ -16,6 +15,8 @@ export default function Grid({
   noBottom,
   children
 }) {
+  String.prototype.mod = function() { return !!gridModule? gridModule[this] : this }
+
   let className = "grid";
   if (col) {
     className = "grid-" + col;
@@ -48,7 +49,7 @@ export default function Grid({
     className = className + "-noBottom";
   }
 
-  return <div className={className}>{children}</div>;
+  return <div className={className.mod()}>{children}</div>;
 }
 Grid.propTypes = {
   children: PropTypes.node.isRequired,
