@@ -20,51 +20,49 @@ export default function Flex({
   wrap,
   onClick,
 }) {
-  String.prototype.mod = function() { return !!flexModule? flexModule[this] : this }
-
-  let classes = { ...classNameObject(className), ["sui-flex".mod()]: true }
+  let classes = { ...classNameObject(className), [flexModule["sui-flex"]]: true }
   let styleAttrs = {}
 
   if (direction === "vertical") {
-    classes["sui-flex-vertical".mod()] = true
+    classes["sui-flex-vertical"] = true
 
     if (align === "top") {
-      classes["sui-flex-start".mod()] = true
+      classes["sui-flex-start"] = true
     } else if (align === "middle") {
-      classes["sui-flex-center".mod()] = true
+      classes["sui-flex-center"] = true
     } else if (align === "bottom") {
-      classes["sui-flex-end".mod()] = true
+      classes["sui-flex-end"] = true
     }
 
     if (justify === "start") {
-      classes["sui-flex-top".mod()] = true
+      classes["sui-flex-top"] = true
     } else if (justify === "center") {
-      classes["sui-flex-middle".mod()] = true
+      classes["sui-flex-middle"] = true
     } else if (justify === "end") {
-      classes["sui-flex-bottom".mod()] = true
+      classes["sui-flex-bottom"] = true
     }
   } else {
     if (align === "top") {
-      classes["sui-flex-top".mod()] = true
+      classes["sui-flex-top"] = true
     } else if (align === "middle") {
-      classes["sui-flex-middle".mod()] = true
+      classes["sui-flex-middle"] = true
     } else if (align === "bottom") {
-      classes["sui-flex-bottom".mod()] = true
+      classes["sui-flex-bottom"] = true
     }
 
     if (justify === "start") {
-      classes["sui-flex-start".mod()] = true
+      classes["sui-flex-start"] = true
     } else if (justify === "center") {
-      classes["sui-flex-center".mod()] = true
+      classes["sui-flex-center"] = true
     } else if (justify === "end") {
-      classes["sui-flex-end".mod()] = true
+      classes["sui-flex-end"] = true
     } else if (justify === "space-between") {
-      classes["sui-flex-between".mod()] = true
+      classes["sui-flex-between"] = true
     }
   }
 
-  if (grow) { classes["sui-flex-grow".mod()] = true }
-  if (!flex) { classes["sui-flex-hidden".mod()] = true }
+  if (grow) { classes["sui-flex-grow"] = true }
+  if (!flex) { classes["sui-flex-hidden"] = true }
 
   if (!!height) {
     styleAttrs.height = `${height}px`
@@ -74,7 +72,7 @@ export default function Flex({
 
   if (!!width && typeof width === "string") {
     if (width === "max") {
-      classes["sui-flex-grow".mod()] = true
+      classes["sui-flex-grow"] = true
     } else if (["em", "px", "rem", "%"].some(unit => width.includes(unit))) {
       styleAttrs.width = width
       styleAttrs.minWidth = width
@@ -90,13 +88,13 @@ export default function Flex({
     styleAttrs.background = background
   }
 
-  if (wrap) { classes["sui-flex-wrap".mod()] = true }
-  if (overflowX) { classes["sui-flex-overflow-x".mod()] = true }
-  if (overflowY) { classes["sui-flex-overflow-y".mod()] = true }
+  if (wrap) { classes["sui-flex-wrap"] = true }
+  if (overflowX) { classes["sui-flex-overflow-x"] = true }
+  if (overflowY) { classes["sui-flex-overflow-y"] = true }
 
   const [gutterX, gutterY] = gutter || []
-  if (!!gutterX) { classes[`sui-flex-gutter-x${gutterX}`.mod()] = true }
-  if (!!gutterY) { classes[`sui-flex-gutter-y${gutterY}`.mod()] = true }
+  if (!!gutterX) { classes[`sui-flex-gutter-x${gutterX}`] = true }
+  if (!!gutterY) { classes[`sui-flex-gutter-y${gutterY}`] = true }
 
   let fns = {}
   if (typeof onClick === 'function') { fns.onClick = onClick }
