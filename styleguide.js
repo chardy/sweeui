@@ -7,6 +7,7 @@ import Fieldset from "./src/components/Fieldset/Fieldset";
 import Input from "./src/components/Input/Input";
 
 import Grid from "./src/layouts/Grid/Grid";
+import Row from "./src/layouts/Row/Row";
 import Col from "./src/layouts/Col/Col";
 import Flex from "./src/layouts/Flex/Flex";
 import Box from "./src/layouts/Box/Box";
@@ -19,6 +20,7 @@ global.Fieldset = Fieldset;
 global.Input = Input;
 
 global.Grid = Grid;
+global.Row = Row;
 global.Col = Col;
 global.Flex = Flex;
 global.Box = Box;

@@ -1,281 +1,71 @@
-import React from "react";
-import PropTypes from "prop-types";
-import gridModule from '../Grid/Grid.module.css'
+import React from 'react';
+import PropTypes from 'prop-types';
+import createProps from '../Init/createProps';
+import getClass from '../Init/classNames';
+import { ColumnSizeType, ViewportSizeType } from '../Init/types';
 
-export default function Col({
-  col,
-  xs,
-  sm,
-  md,
-  lg,
-  pushLeft,
-  pushRight,
-  resetOffset,
-  first,
-  last,
-  fixed,
-  fixedSize,
-  fixedXs,
-  fixedSm,
-  fixedMd,
-  fixedLg,
-  fullHeight,
-  fullHeightXsOff,
-  fullHeightSmOff,
-  fullHeightMdOff,
-  fullHeightLgOff,
-  children,
-}) {
-  String.prototype.mod = function() { return !!gridModule? gridModule[this] : this }
+const propTypes = {
+  xs: ColumnSizeType,
+  sm: ColumnSizeType,
+  md: ColumnSizeType,
+  lg: ColumnSizeType,
+  xl: ColumnSizeType,
+  xsOffset: PropTypes.number,
+  smOffset: PropTypes.number,
+  mdOffset: PropTypes.number,
+  lgOffset: PropTypes.number,
+  xlOffset: PropTypes.number,
+  first: ViewportSizeType,
+  last: ViewportSizeType,
+  className: PropTypes.string,
+  children: PropTypes.node
+};
 
-  let className = "col";
-  let leftOffset = "off-0";
-  let rightOffset = "off-0";
-  if (fixed) {
-    className = "fixed";
-    if (fixedSize) {
-      className = className + "-" + fixedSize;
-    } else {
-      className = className + "-10";
-    }
+const classMap = {
+  xs: 'col-xs',
+  sm: 'col-sm',
+  md: 'col-md',
+  lg: 'col-lg',
+  xl: 'col-xl',
+  xsOffset: 'col-xs-offset',
+  smOffset: 'col-sm-offset',
+  mdOffset: 'col-md-offset',
+  lgOffset: 'col-lg-offset',
+  xlOffset: 'col-xl-offset'
+};
 
-    if (fixedXs) {
-      className = className + "_fxs-" + fixedXs;
-    }
-    if (fixedSm) {
-      className = className + "_fsm-" + fixedSm;
-    }
-    if (fixedMd) {
-      className = className + "_fmd-" + fixedMd;
-    }
-    if (fixedLg) {
-      className = className + "_flg-" + fixedLg;
-    }
-    if (fullHeight) {
-      className = className + "_fullHeight-on";
-    }
-    if (fullHeightXsOff) {
-      className = className + "_fullHeight_xs-off";
-    }
-    if (fullHeightSmOff) {
-      className = className + "_fullHeight_sm-off";
-    }
-    if (fullHeightMdOff) {
-      className = className + "_fullHeight_md-off";
-    }
-    if (fullHeightLgOff) {
-      className = className + "_fullHeight_lg-off";
-    }
-  } else {
-    if (col) {
-      className = "col" + col;
-    }
-    if (xs) {
-      className = className + "_xs-" + xs;
-    }
-    if (sm) {
-      className = className + "_sm-" + sm;
-    }
-    if (md) {
-      className = className + "_md-" + md;
-    }
-    if (lg) {
-      className = className + "_lg-" + lg;
-    }
-    if (first) {
-      className = "col-first";
-    }
-    if (last) {
-      className = "col-last";
-    }
-    // if (pushLeft) {
-    //   leftOffset = "off-" + pushLeft;
-    // }
-    // if (pushRight) {
-    //   rightOffset = "off-" + pushRight;
-    // }
-  }
-
-  if (fixed) {
-    return <div className={className.mod()}>{children}</div>;
-  } else {
-    return (
-      <div
-        className={className.mod()}
-        push-left={leftOffset}
-        push-right={rightOffset}
-      >
-        {children}
-      </div>
-    );
-  }
+function isInteger(value) {
+  return typeof value === 'number' && isFinite(value) && Math.floor(value) === value;
 }
-Col.propTypes = {
-  children: PropTypes.node.isRequired,
-  col: PropTypes.oneOf([
-    "1",
-    "2",
-    "3",
-    "4",
-    "5",
-    "6",
-    "7",
-    "8",
-    "9",
-    "10",
-    "11",
-    "12",
-  ]),
-  xs: PropTypes.oneOf([
-    "1",
-    "2",
-    "3",
-    "4",
-    "5",
-    "6",
-    "7",
-    "8",
-    "9",
-    "10",
-    "11",
-    "12",
-  ]),
-  sm: PropTypes.oneOf([
-    "1",
-    "2",
-    "3",
-    "4",
-    "5",
-    "6",
-    "7",
-    "8",
-    "9",
-    "10",
-    "11",
-    "12",
-  ]),
-  md: PropTypes.oneOf([
-    "1",
-    "2",
-    "3",
-    "4",
-    "5",
-    "6",
-    "7",
-    "8",
-    "9",
-    "10",
-    "11",
-    "12",
-  ]),
-  lg: PropTypes.oneOf([
-    "1",
-    "2",
-    "3",
-    "4",
-    "5",
-    "6",
-    "7",
-    "8",
-    "9",
-    "10",
-    "11",
-    "12",
-  ]),
-  pushLeft: PropTypes.oneOf([
-    "0",
-    "1",
-    "2",
-    "3",
-    "4",
-    "5",
-    "6",
-    "7",
-    "8",
-    "9",
-    "10",
-    "11",
-  ]),
-  pushRight: PropTypes.oneOf([
-    "0",
-    "1",
-    "2",
-    "3",
-    "4",
-    "5",
-    "6",
-    "7",
-    "8",
-    "9",
-    "10",
-    "11",
-  ]),
-  resetOffset: PropTypes.bool,
-  first: PropTypes.bool,
-  last: PropTypes.bool,
-  fixed: PropTypes.bool,
-  fixedSize: PropTypes.oneOf([
-    "10",
-    "15",
-    "20",
-    "25",
-    "30",
-    "35",
-    "40",
-    "max",
-    "auto",
-  ]),
-  fixedLg: PropTypes.oneOf([
-    "10",
-    "15",
-    "20",
-    "25",
-    "30",
-    "35",
-    "40",
-    "max",
-    "auto",
-  ]),
-  fixedMd: PropTypes.oneOf([
-    "10",
-    "15",
-    "20",
-    "25",
-    "30",
-    "35",
-    "40",
-    "max",
-    "auto",
-  ]),
-  fixedSm: PropTypes.oneOf([
-    "10",
-    "15",
-    "20",
-    "25",
-    "30",
-    "35",
-    "40",
-    "max",
-    "auto",
-  ]),
-  fixedXs: PropTypes.oneOf([
-    "10",
-    "15",
-    "20",
-    "25",
-    "30",
-    "35",
-    "40",
-    "max",
-    "auto",
-  ]),
-  fullHeight: PropTypes.bool,
-  fullHeightXsOff: PropTypes.bool,
-  fullHeightSmOff: PropTypes.bool,
-  fullHeightMdOff: PropTypes.bool,
-  fullHeightLgOff: PropTypes.bool,
-};
 
-Col.defaultProps = {
-  fixed: false,
-};
+function getColClassNames(props) {
+  const extraClasses = [];
+
+  if (props.className) {
+    extraClasses.push(props.className);
+  }
+
+  if (props.first) {
+    extraClasses.push(getClass('first-' + props.first));
+  }
+
+  if (props.last) {
+    extraClasses.push(getClass('last-' + props.last));
+  }
+
+  return Object.keys(props)
+    .filter(key => classMap[key])
+    .map(key => getClass(isInteger(props[key]) ? (classMap[key] + '-' + props[key]) : classMap[key]))
+    .concat(extraClasses);
+}
+
+export function getColumnProps(props) {
+  return createProps(propTypes, props, getColClassNames(props));
+}
+
+export default function Col(props) {
+  const { ...columnProps } = props;
+  return React.createElement('div', getColumnProps(columnProps));
+}
+
+Col.propTypes = propTypes;
