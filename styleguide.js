@@ -5,6 +5,7 @@ import Button from "./src/components/Button/Button";
 import Form from "./src/components/Form/Form";
 import Fieldset from "./src/components/Fieldset/Fieldset";
 import Input from "./src/components/Input/Input";
+import Label from "./src/components/Label/Label";
 
 import Grid from "./src/layouts/Grid/Grid";
 import Row from "./src/layouts/Row/Row";
@@ -18,6 +19,7 @@ global.Button = Button;
 global.Form = Form;
 global.Fieldset = Fieldset;
 global.Input = Input;
+global.Label = Label;
 
 global.Grid = Grid;
 global.Row = Row;

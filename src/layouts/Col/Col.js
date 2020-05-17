@@ -17,6 +17,7 @@ const propTypes = {
   xlOffset: PropTypes.number,
   first: ViewportSizeType,
   last: ViewportSizeType,
+  hidden: ViewportSizeType,
   className: PropTypes.string,
   children: PropTypes.node
 };
@@ -51,6 +52,10 @@ function getColClassNames(props) {
 
   if (props.last) {
     extraClasses.push(getClass('last-' + props.last));
+  }
+
+  if (props.hidden) {
+    extraClasses.push(getClass('hidden-' + props.hidden));
   }
 
   return Object.keys(props)

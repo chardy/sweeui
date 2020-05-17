@@ -15,9 +15,9 @@ Form Stacked:
 ```jsx
 <Form type="stacked">
   <Fieldset>
-    <label>Username</label>
+    <Label>Username</Label>
     <Input />
-    <label>Password</label>
+    <Label>Password</Label>
     <Input type="password" />
     <Button type="primary">Submit</Button>
   </Fieldset>
@@ -29,11 +29,11 @@ Form Aligned:
 ```jsx
 <Form type="aligned">
   <Fieldset type="input-group">
-    <label>Username</label>
+    <Label>Username</Label>
     <Input />
   </Fieldset>
   <Fieldset type="input-group">
-    <label>Password</label>
+    <Label>Password</Label>
     <Input type="password" />
   </Fieldset>
   <Fieldset type="action-group">

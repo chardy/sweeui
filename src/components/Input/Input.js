@@ -71,6 +71,7 @@ Input.propTypes = {
   placeholder: PropTypes.string,
   name: PropTypes.string,
   autoComplete: PropTypes.oneOf(["on", "off"]),
+  size: PropTypes.oneOf(["small", "normal", "medium", "large", "xlarge"]),
   id: PropTypes.string
 };
 Input.defaultProps = {

@@ -192,11 +192,6 @@ select[multiple] {
 label {
   margin: 0.5em 0 0.2em;
 }
-fieldset {
-  margin: 0;
-  padding: 0;
-  border: 0;
-}
 legend {
   display: block;
   width: 100%;
@@ -309,7 +304,7 @@ input[type="checkbox"]:not(.switch):after {
   border-top: 0;
   border-left: 0;
   left: 6px;
-  top: 3px;
+  top: 4px;
   -webkit-transform: rotate(var(--r, 20deg));
   transform: rotate(var(--r, 20deg));
 }

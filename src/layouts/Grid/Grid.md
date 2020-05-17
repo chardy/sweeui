@@ -1,6 +1,18 @@
 Basic Layout:
 
 ```jsx
+<Grid>
+  <Row>
+    <Col xs={12} sm={3} md={2} lg={1} ><Box variant="card">1</Box></Col>
+    <Col xs={6} sm={6} md={8} lg={10} ><Box variant="card">2</Box></Col>
+    <Col xs={6} sm={3} md={2} lg={1} ><Box variant="card">3</Box></Col>
+  </Row>
+</Grid>
+```
+
+We can implement without Grid as well.
+
+```jsx
   <Row>
     <Col xs={12} sm={6} md={4} lg={2}>
       <Box variant="card">1</Box>
@@ -44,15 +56,7 @@ Basic Layout:
   </Row>
 ```
 
-```jsx
-<Grid fluid>
-  <Row>
-    <Col xs={12} sm={3} md={2} lg={1} ><Box variant="card">1</Box></Col>
-    <Col xs={6} sm={6} md={8} lg={10} ><Box variant="card">2</Box></Col>
-    <Col xs={6} sm={3} md={2} lg={1} ><Box variant="card">3</Box></Col>
-  </Row>
-</Grid>
-```
+Offset Sample
 
 ```jsx
 <Row>
@@ -70,6 +74,8 @@ Basic Layout:
 </Row>
 ```
 
+Default to lg or anything from 'xs', 'sm', 'md', 'lg', 'xl'
+
 ```jsx
 <Row>
   <Col lg><Box variant="card">1</Box></Col>
@@ -78,12 +84,16 @@ Basic Layout:
 </Row>
 ```
 
+The component <Col> if not apecify will auto distribute
+
 ```jsx
 <Row>
   <Col lg><Box variant="card">2</Box></Col>
   <Col lg><Box variant="card">3</Box></Col>
 </Row>
 ```
+
+Distribute 'around'
 
 ```jsx
 <Row around="lg">
@@ -93,6 +103,8 @@ Basic Layout:
 </Row>
 ```
 
+Distribute 'between'
+
 ```jsx
 <Row between="lg">
   <Col lg={3}><Box variant="card">1</Box></Col>
@@ -100,6 +112,8 @@ Basic Layout:
   <Col lg={3}><Box variant="card">3</Box></Col>
 </Row>
 ```
+
+Distribute 'start'
 
 ```jsx
 <Row start="lg">
@@ -109,6 +123,8 @@ Basic Layout:
 </Row>
 ```
 
+Distribute 'end'
+
 ```jsx
 <Row end="lg">
   <Col lg={3}><Box variant="card">1</Box></Col>
@@ -116,6 +132,8 @@ Basic Layout:
   <Col lg={3}><Box variant="card">3</Box></Col>
 </Row>
 ```
+
+Align 'top'
 
 ```jsx
 <Row top="lg" style={{background: "#efefef", height: "100px"}}>
@@ -125,13 +143,17 @@ Basic Layout:
 </Row>
 ```
 
+Align 'middle'
+
 ```jsx
-<Row center="lg" style={{background: "#efefef", height: "100px"}}>
+<Row middle="lg" style={{background: "#efefef", height: "100px"}}>
   <Col lg={4}><Box variant="card">1</Box></Col>
   <Col lg={4}><Box variant="card">2</Box></Col>
   <Col lg={4}><Box variant="card">3</Box></Col>
 </Row>
 ```
+
+Align 'bottom'
 
 ```jsx
 <Row bottom="lg" style={{background: "#efefef", height: "100px"}}>
@@ -139,4 +161,22 @@ Basic Layout:
   <Col lg={4}><Box variant="card">2</Box></Col>
   <Col lg={4}><Box variant="card">3</Box></Col>
 </Row>
+```
+
+Hidden if...
+
+```jsx
+<Row>
+  <Col lg><Box variant="card">1</Box></Col>
+  <Col lg><Box variant="card">2</Box></Col>
+  <Col lg hidden="xs"><Box variant="card">3</Box></Col>
+</Row>
+```
+
+```jsx
+<Grid>
+  <Col><Box variant="card">1</Box></Col>
+  <Col><Box variant="card">2</Box></Col>
+  <Col hidden="xs"><Box variant="card">3</Box></Col>
+</Grid>
 ```

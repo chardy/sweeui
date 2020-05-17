@@ -1,6 +1,6 @@
-:root {
-  --gutter-width: 16px;
-  --outer-margin: 32px;
+:html {
+  --gutter-width: 1rem;
+  --outer-margin: 2rem;
   --gutter-compensation: calc((var(--gutter-width) * 0.5) * -1);
   --half-gutter-width: calc((var(--gutter-width) * 0.5));
   --xs-min: 0rem;
@@ -14,13 +14,11 @@
   box-sizing: border-box;
   margin-left: auto;
   margin-right: auto;
-  padding-right: 8px;
-  padding-left: 8px;
 }
 
 .container-fluid {
-  padding-right: var(--gutter-width, 16px);
-  padding-left: var(--gutter-width, 16px);
+  padding-right: var(--outer-margin, 2rem);
+  padding-left: var(--outer-margin, 2rem);
 }
 
 @media only screen and (min-width: 576px) {
@@ -57,8 +55,8 @@
   flex: 0 1 auto;
   flex-direction: row;
   flex-wrap: wrap;
-  margin-right: var(--gutter-compensation, -08px);
-  margin-left: var(--gutter-compensation, -08px);
+  margin-right: var(--gutter-compensation, -0.5rem);
+  margin-left: var(--gutter-compensation, -0.5rem);
 }
 
 .row.reverse {
@@ -202,8 +200,8 @@
   box-sizing: border-box;
   flex: 0 0 auto;
   flex-basis: 100%;
-  padding-right: var(--half-gutter-width, 8px);
-  padding-left: var(--half-gutter-width, 8px);
+  padding-right: var(--half-gutter-width, 0.5rem);
+  padding-left: var(--half-gutter-width, 0.5rem);
   max-width: 100%;
 }
 
@@ -560,8 +558,8 @@
   .col-md-offset-12 {
     box-sizing: border-box;
     flex: 0 0 auto;
-    padding-right: var(--half-gutter-width, 08px);
-    padding-left: var(--half-gutter-width, 08px);
+    padding-right: var(--half-gutter-width, 0.5rem);
+    padding-left: var(--half-gutter-width, 0.5rem);
   }
 
   .col-md {
@@ -755,8 +753,8 @@
   .col-lg-offset-12 {
     box-sizing: border-box;
     flex: 0 0 auto;
-    padding-right: var(--half-gutter-width, 08px);
-    padding-left: var(--half-gutter-width, 08px);
+    padding-right: var(--half-gutter-width, 0.5rem);
+    padding-left: var(--half-gutter-width, 0.5rem);
   }
 
   .col-lg {
@@ -950,8 +948,8 @@
   .col-xl-offset-12 {
     box-sizing: border-box;
     flex: 0 0 auto;
-    padding-right: var(--half-gutter-width, 08px);
-    padding-left: var(--half-gutter-width, 08px);
+    padding-right: var(--half-gutter-width, 0.5rem);
+    padding-left: var(--half-gutter-width, 0.5rem);
   }
 
   .col-xl {

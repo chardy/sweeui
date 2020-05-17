@@ -19,6 +19,12 @@
   margin: 0.25em 0;
 }
 
+fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
 /*
 Need to separate out the :not() selector from the rest of the CSS 2.1 selectors
 since IE8 won't execute CSS that contains a CSS3 selector.
@@ -72,7 +78,7 @@ since IE8 won't execute CSS that contains a CSS3 selector.
   border-radius: 0;
   position: relative;
   top: -1px;
-  width: 100%;
+  width: 300px;
 }
 .form .form-group input:focus {
   z-index: 2;
@@ -110,6 +116,10 @@ since IE8 won't execute CSS that contains a CSS3 selector.
   .form-group input[type="tel"],
   .form-group input[type="color"] {
     margin-bottom: 0;
+  }
+
+  .form .form-group input {
+    width: 100%;
   }
 
   .form-aligned .input-group label {
