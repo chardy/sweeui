@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-export default function Section({ padding, background, children }) {
-  return <div style={{ padding, background }}>{children}</div>;
+export default function Section({ className, padding, background, children }) {
+  return <section className={className} style={{ padding, background }}>{children}</section>
 }
 Section.propTypes = {
   children: PropTypes.node.isRequired,

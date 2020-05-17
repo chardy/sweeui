@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-export default function Wrapper({ width, padding, children }) {
+export default function Wrapper({ className, width, padding, children }) {
   return (
-    <div style={{ padding, maxWidth: width, margin: "0 auto" }}>{children}</div>
+    <div className={className} style={{ padding, maxWidth: width, margin: "0 auto" }}>{children}</div>
   );
 }
 Wrapper.propTypes = {
