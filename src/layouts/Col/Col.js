@@ -68,7 +68,7 @@ export default function Col({
     }
   } else {
     if (col) {
-      className = "col-" + col;
+      className = "col" + col;
     }
     if (xs) {
       className = className + "_xs-" + xs;
@@ -88,12 +88,12 @@ export default function Col({
     if (last) {
       className = "col-last";
     }
-    if (pushLeft) {
-      leftOffset = "off-" + pushLeft;
-    }
-    if (pushRight) {
-      rightOffset = "off-" + pushRight;
-    }
+    // if (pushLeft) {
+    //   leftOffset = "off-" + pushLeft;
+    // }
+    // if (pushRight) {
+    //   rightOffset = "off-" + pushRight;
+    // }
   }
 
   if (fixed) {
