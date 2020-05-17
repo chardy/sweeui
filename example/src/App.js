@@ -5,7 +5,7 @@ import { Grid, Col, Button, Form, Fieldset, Input, Box } from "sweeui";
 export default function App() {
   return (
     <div>
-      <Grid noGutter>
+      {/* <Grid noGutter>
         <Col fixed fixedSize="10" fixedXs="20" fullHeight fullHeightXsOff>
           <Box variant="card" margin="10px" radius="5px">
             Test
@@ -21,8 +21,8 @@ export default function App() {
             Test
           </Box>
         </Col>
-      </Grid>
-      {/* <Button size="small">Button</Button>
+      </Grid> */}
+      <Button size="small">Button</Button>
       <Button size="normal">Button</Button>
       <Button size="medium">Button</Button>
       <Button size="large">Button</Button>
@@ -51,9 +51,32 @@ export default function App() {
           <Input placeholder="Password" type="password" />
         </Fieldset>
         <Fieldset type="action-group">
+          <Input id="remember" type="checkbox" />
+          <label htmlFor="remember">Remember me</label>
+        </Fieldset>
+        <br />
+        <Fieldset type="action-group">
+          <Input id="yes" type="radio" name="agree" />
+          <label htmlFor="yes">Yes</label> <Input id="no" type="radio" name="agree" />
+          <label htmlFor="no">No</label>
+        </Fieldset>
+        <br />
+        <Fieldset type="action-group">
+          <Input id="switch" type="switch" /> <label htmlFor="switch">Switch?</label>
+        </Fieldset>
+        <br />
+        <Fieldset>
+          <select id="multi-state">
+            <option>Singapore</option>
+            <option>Malaysia</option>
+            <option>Indonesia</option>
+          </select>
+        </Fieldset>
+        <br />
+        <Fieldset type="action-group">
           <Button type="primary">Submit</Button>
         </Fieldset>
-      </Form> */}
+      </Form>
     </div>
   );
 }
