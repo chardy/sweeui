@@ -20,7 +20,7 @@ export default function Flex({
   wrap,
   onClick,
 }) {
-  let classes = { ...classNameObject(className), [flexModule["sui-flex"]]: true }
+  let classes = { ...classNameObject(className), [flexModule["Flex"]]: true }
   let styleAttrs = {}
 
   if (direction === "vertical") {
