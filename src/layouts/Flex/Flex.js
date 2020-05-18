@@ -91,8 +91,13 @@ export default function Flex({
     }
   }
 
+  if (!!backgroundImage) {
+    styleAttrs.backgroundImage = backgroundImage
+    styleAttrs.backgroundRepeat = 'no-repeat'
+    styleAttrs.backgroundPositionX = 'center'
+    styleAttrs.backgroundPositionY = 'center'
+  }
   if (!!background) { styleAttrs.background = background }
-  if (!!backgroundImage) { styleAttrs.backgroundImage = backgroundImage }
   if (!!backgroundType) { classes[`sui-flex-background-${backgroundType}`] = true }
 
   if (wrap) { classes["sui-flex-wrap"] = true }
