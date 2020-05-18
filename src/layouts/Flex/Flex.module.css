@@ -8,8 +8,14 @@
 .Flex:global.sui-flex-grow { flex-grow: 1; }
 .Flex:global.sui-flex-wrap { flex-wrap: wrap; }
 .Flex:global.sui-flex-hidden { display: none; }
-.Flex:global.sui-flex-overflow-x { overflow-x: auto }
-.Flex:global.sui-flex-overflow-y { overflow-y: auto }
+.Flex:global.sui-flex-overflow-x { overflow-x: auto; }
+.Flex:global.sui-flex-overflow-y { overflow-y: auto; }
+
+.Flex:global.sui-flex-pos-relative { position: relative; }
+
+.Flex:global.sui-flex-background-cover { background-size: cover; }
+.Flex:global.sui-flex-background-contain { background-size: contain; }
+.Flex:global.sui-flex-background-stretch { background-size: stretch; }
 
 .Flex:global.sui-flex-top { align-items: flex-start; }
 .Flex:global.sui-flex-middle { align-items: center; }

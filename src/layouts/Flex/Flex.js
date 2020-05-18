@@ -6,7 +6,10 @@ import flexModule from './Flex.module.css'
 export default function Flex({
   children,
   className,
+  position,
   background,
+  backgroundImage,
+  backgroundType,
   direction,
   flex,
   grow,
@@ -32,6 +35,8 @@ export default function Flex({
       classes["sui-flex-center"] = true
     } else if (align === "bottom") {
       classes["sui-flex-end"] = true
+    } else if (align === "space-between") {
+      classes["sui-flex-between"] = true
     }
 
     if (justify === "start") {
@@ -64,6 +69,8 @@ export default function Flex({
   if (grow) { classes["sui-flex-grow"] = true }
   if (!flex) { classes["sui-flex-hidden"] = true }
 
+  if (!!position) { classes[`sui-flex-pos-${position}`] = true }
+
   if (!!height) {
     styleAttrs.height = `${height}px`
     styleAttrs.minHeight = `${height}px`
@@ -84,9 +91,9 @@ export default function Flex({
     }
   }
 
-  if (!!background) {
-    styleAttrs.background = background
-  }
+  if (!!background) { styleAttrs.background = background }
+  if (!!backgroundImage) { styleAttrs.backgroundImage = backgroundImage }
+  if (!!backgroundType) { classes[`sui-flex-background-${backgroundType}`] = true }
 
   if (wrap) { classes["sui-flex-wrap"] = true }
   if (overflowX) { classes["sui-flex-overflow-x"] = true }
@@ -109,7 +116,10 @@ export default function Flex({
 Flex.propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
+  position: PropTypes.oneOf(["relative"]),
   background: PropTypes.string,
+  backgroundImage: PropTypes.string,
+  backgroundType: PropTypes.oneOf(["contain", "cover", "stretch"]),
   direction: PropTypes.oneOf(["horizontal", "vertical"]),
   flex: PropTypes.bool,
   grow: PropTypes.bool,
@@ -126,7 +136,10 @@ Flex.propTypes = {
 
 Flex.defaultProps = {
   className: null,
+  position: null,
   background: null,
+  backgroundImage: null,
+  backgroundType: null,
   direction: 'horizontal',
   flex: true,
   grow: false,

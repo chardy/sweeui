@@ -39,6 +39,15 @@ input[type="button"] {
   box-shadow: none;
 }
 
+/* Link Button */
+.button-link {
+  background: transparent;
+  border: transparent;
+  box-shadow: none;
+  padding: 0;
+  margin-right: 0;
+}
+
 button[disabled],
 .button[disabled],
 .button-disabled,
@@ -191,6 +200,13 @@ button.loading:before {
   -moz-animation: animation-rotate 750ms linear infinite;
   -o-animation: animation-rotate 750ms linear infinite;
   animation: animation-rotate 750ms linear infinite;
+}
+
+.button-link:hover,
+.button-link:active,
+.button-link:focus {
+  background: none;
+  text-decoration: underline;
 }
 
 .button.button-primary.loading:before,
