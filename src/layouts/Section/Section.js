@@ -2,7 +2,12 @@ import React from "react";
 import PropTypes from "prop-types";
 
 export default function Section({ className, padding, background, height, children }) {
-  return <section className={className} style={{ padding, background, height }}>{children}</section>
+  let styleAttrs = {}
+  if (!!padding) { styleAttrs.padding = padding }
+  if (!!background) { styleAttrs.background = background }
+  if (!!height) { styleAttrs.height = height }
+
+  return <section className={className} style={styleAttrs}>{children}</section>
 }
 Section.propTypes = {
   children: PropTypes.node.isRequired,
@@ -11,5 +16,5 @@ Section.propTypes = {
   background: PropTypes.string
 };
 Section.defaultProps = {
-  padding: "0"
+  padding: null
 };
