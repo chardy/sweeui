@@ -92,7 +92,7 @@ export default function Flex({
   }
 
   if (!!backgroundImage) {
-    styleAttrs.backgroundImage = backgroundImage
+    styleAttrs.backgroundImage = `url(${backgroundImage})`
     styleAttrs.backgroundRepeat = 'no-repeat'
     styleAttrs.backgroundPositionX = 'center'
     styleAttrs.backgroundPositionY = 'center'
