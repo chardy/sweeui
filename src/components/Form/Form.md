@@ -49,6 +49,7 @@ Form Fieldset Group:
   <Fieldset type="form-group">
     <Input placeholder="Username" />
     <Input placeholder="Password" type="password" />
+    <Input placeholder="Credential" />
   </Fieldset>
   <Fieldset type="action-group">
     <Input id="remember" type="checkbox" />
