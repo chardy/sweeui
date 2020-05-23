@@ -11,6 +11,7 @@ export default function Box({
   background,
   borderRadius,
   elevation,
+  clickable,
   children,
 }) {
   let classes = { ...classNameObject(className), [boxModule["Box"]]: true }
@@ -51,6 +52,10 @@ export default function Box({
     }
   }
 
+  if (clickable) {
+    classes["sui-box-pointer"] = true
+  }
+
   return (
     <div
       className={classNames(classes)}
@@ -75,6 +80,7 @@ Box.propTypes = {
   variant: PropTypes.oneOf(["default", "card", "dashed", "dotted", "outlined"]),
   elevation: PropTypes.oneOf([0, 1, 2, 3, 4]),
   background: PropTypes.string,
+  clickable: PropTypes.bool,
 };
 Box.defaultProps = {
   className: null,
@@ -83,4 +89,5 @@ Box.defaultProps = {
   margin: "0",
   borderRadius: "0px",
   background: "#FFFFFF",
+  clickable: false,
 };
