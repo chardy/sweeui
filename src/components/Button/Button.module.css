@@ -45,6 +45,7 @@ input[type="button"] {
   border: transparent;
   box-shadow: none;
   padding: 0;
+  color: var(--link);
   margin-right: 0;
 }
 
@@ -206,6 +207,7 @@ button.loading:before {
 .button-link:active,
 .button-link:focus {
   background: none;
+  color: var(--linkHover);
   text-decoration: underline;
 }
 
