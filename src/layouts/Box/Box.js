@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { classNames, classNameObject } from "../../utils/format";
+import boxModule from './Box.module.css'
 
 export default function Box({
   className,
@@ -12,49 +13,41 @@ export default function Box({
   elevation,
   children,
 }) {
-  let classes = { ...classNameObject(className) }
+  let classes = { ...classNameObject(className), [boxModule["Box"]]: true }
   
-  let border = "none";
-  let boxShadow = "none";
   if (variant == "outlined") {
-    border = "1px solid rgba(0, 0, 0, 0.12)";
+    classes["sui-outlined"] = true
   }
   if (variant == "dashed") {
-    border = "1px dashed rgba(0, 0, 0, 0.32)";
+    classes["sui-dashed"] = true
   }
   if (variant == "dotted") {
-    border = "1px dotted rgba(0, 0, 0, 0.62)";
+    classes["sui-dotted"] = true
   }
 
   if (variant == "card") {
-    border = "1px solid var(--input-border-color)";
-    boxShadow =
-      "rgba(67, 90, 111, 0.3) 0px 0px 1px, rgba(67, 90, 111, 0.47) 0px 2px 4px -2px";
+    classes["sui-card"] = true
   }
 
   if (elevation) {
     switch (elevation) {
       case 0:
-        boxShadow = "rgba(67, 90, 111, 0.3) 0px 0px 1px";
+        classes["sui-elevate-0"] = true
         break;
       case 1:
-        boxShadow =
-          "rgba(67, 90, 111, 0.3) 0px 0px 1px, rgba(67, 90, 111, 0.47) 0px 2px 4px -2px";
+        classes["sui-elevate-1"] = true
         break;
       case 2:
-        boxShadow =
-          "rgba(67, 90, 111, 0.3) 0px 0px 1px, rgba(67, 90, 111, 0.47) 0px 5px 8px -4px";
+        classes["sui-elevate-2"] = true
         break;
       case 3:
-        boxShadow =
-          "rgba(67, 90, 111, 0.3) 0px 0px 1px, rgba(67, 90, 111, 0.47) 0px 8px 10px -4px";
+        classes["sui-elevate-3"] = true
         break;
       case 4:
-        boxShadow =
-          "rgba(67, 90, 111, 0.3) 0px 0px 1px, rgba(67, 90, 111, 0.47) 0px 16px 24px -8px";
+        classes["sui-elevate-4"] = true
         break;
       default:
-        boxShadow = "none";
+        classes["sui-elevate-0"] = true
     }
   }
 
@@ -65,8 +58,6 @@ export default function Box({
         padding,
         margin,
         background,
-        border,
-        boxShadow,
         borderRadius,
         overflow: "hidden",
       }}

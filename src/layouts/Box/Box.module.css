@@ -1,0 +1,37 @@
+.Box:global.sui-outlined {
+  border: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.Box:global.sui-dashed {
+  border: 1px dashed rgba(0, 0, 0, 0.32);
+}
+
+.Box:global.sui-dotted {
+  border: 1px dotted rgba(0, 0, 0, 0.62);
+}
+
+.Box:global.sui-card {
+  border: 1px solid var(--input-border-color);
+  box-shadow: rgba(67, 90, 111, 0.3) 0px 0px 1px, rgba(67, 90, 111, 0.47) 0px 2px 4px -2px;
+}
+
+.Box:global.sui-elevate-0 {
+  box-shadow: rgba(67, 90, 111, 0.3) 0px 0px 1px;
+}
+
+.Box:global.sui-elevate-1 {
+  box-shadow: rgba(67, 90, 111, 0.3) 0px 0px 1px, rgba(67, 90, 111, 0.47) 0px 2px 4px -2px;
+}
+
+.Box:global.sui-elevate-2 {
+  box-shadow: rgba(67, 90, 111, 0.3) 0px 0px 1px, rgba(67, 90, 111, 0.47) 0px 5px 8px -4px;
+}
+
+.Box:global.sui-elevate-3 {
+  box-shadow: rgba(67, 90, 111, 0.3) 0px 0px 1px, rgba(67, 90, 111, 0.47) 0px 8px 10px -4px;
+}
+
+.Box:global.sui-elevate-4 {
+  box-shadow: rgba(67, 90, 111, 0.3) 0px 0px 1px, rgba(67, 90, 111, 0.47) 0px 16px 24px -8px;
+}
+
