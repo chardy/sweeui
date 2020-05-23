@@ -134,7 +134,7 @@ Flex.propTypes = {
   overflowY: PropTypes.bool,
   align: PropTypes.oneOf(["top", "middle", "bottom"]),
   justify: PropTypes.oneOf(["start", "center", "end", "space-between"]),
-  gutter: PropTypes.arrayOf(PropTypes.oneOf([0,4,8,16,24,32,40])),
+  gutter: PropTypes.arrayOf(PropTypes.oneOf([0,2,4,8,16,24,32,40])),
   wrap: PropTypes.bool,
   onClick: PropTypes.func
 };
