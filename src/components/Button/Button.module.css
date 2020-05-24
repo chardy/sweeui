@@ -1,8 +1,4 @@
-.button,
-button,
-input[type="submit"],
-input[type="reset"],
-input[type="button"] {
+.swee-button {
   display: inline-block;
   color: #333;
   text-align: center;
@@ -28,29 +24,46 @@ input[type="button"] {
 }
 
 /* Rounded Button */
-.button-rounded {
+.swee-button.swee-button-rounded {
   border-radius: 2em;
 }
 
 /* Ghost Button */
-.button-ghost {
+.swee-button.button-light {
   background: transparent;
   border: transparent;
-  box-shadow: none;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05) inset,
+    0 0 10px rgba(0, 0, 0, 0.05) inset;
+}
+
+.swee-button.button-light:hover {
+  background: transparent;
+  border: transparent;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1) inset,
+    0 0 10px rgba(0, 0, 0, 0.1) inset;
 }
 
 /* Link Button */
-.button-link {
+.swee-button.button-link {
   background: transparent;
   border: transparent;
   box-shadow: none;
-  padding: 0;
+  padding: 0.5em 1.5em;
+  margin-right: 0.5em;
   color: var(--link);
   margin-right: 0;
 }
 
-button[disabled],
-.button[disabled],
+.swee-button.button-link:hover, 
+.swee-button.button-link:focus, 
+.swee-button.button-link:active {
+  background: transparent;
+  border: transparent;
+  box-shadow: none;
+  text-decoration: underline;
+}
+
+.swee-button[disabled],
 .button-disabled,
 .button-disabled:hover,
 .button-disabled:focus,
@@ -66,62 +79,38 @@ button[disabled],
   box-shadow: none;
 }
 
-.button.button-primary,
-button.button-primary,
-input[type="submit"].button-primary,
-input[type="reset"].button-primary,
-input[type="button"].button-primary {
+.swee-button.button-primary {
   color: #fff;
   background-color: var(--primary-color);
   border-color: var(--primary-color);
 }
 
-.button.button-success,
-button.button-success,
-input[type="submit"].button-success,
-input[type="reset"].button-success,
-input[type="button"].button-success {
+.swee-button.button-success {
   color: #fff;
-  background: #15cb6e;
-  border-color: #15cb6e;
+  background: var(--success-color);
+  border-color: var(--success-color);
 }
 
-.button.button-error,
-button.button-error,
-input[type="submit"].button-error,
-input[type="reset"].button-error,
-input[type="button"].button-error {
+.swee-button.button-error {
   color: #fff;
-  background: #e7142b;
-  border-color: #e7142b;
+  background: var(--error-color);
+  border-color: var(--error-color);
 }
 
-.button.button-warning,
-button.button-warning,
-input[type="submit"].button-warning,
-input[type="reset"].button-warning,
-input[type="button"].button-warning {
+.swee-button.button-warning {
   color: #fff;
-  background: #f9b801;
-  border-color: #f9b801;
+  background: var(--warning-color);
+  border-color: var(--warning-color);
 }
 
-.button.button-secondary,
-button.button-secondary,
-input[type="submit"].button-secondary,
-input[type="reset"].button-secondary,
-input[type="button"].button-secondary {
+.swee-button.button-secondary {
   color: #fff;
-  background: #5a4fff;
-  border-color: #5a4fff;
+  background: var(--secondary-color);
+  border-color: var(--secondary-color);
 }
 
-button:hover,
-.button:hover,
-input[type="submit"]:hover,
-input[type="reset"]:hover,
-input[type="button"]:hover,
-.button:focus {
+.swee-button:hover,
+.swee-button:focus {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000',endColorstr='#1a000000',GradientType=0);
   background-image: -webkit-gradient(
     linear,
@@ -154,23 +143,16 @@ input[type="button"]:hover,
   outline: 0;
 }
 
-.button:active,
-button:active,
-.button.button-active,
-input[type="submit"]:active,
-input[type="reset"]:active,
-input[type="button"]:active {
+.swee-button:active,
+.swee-button.button-active {
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05) inset,
     0 0 10px rgba(0, 0, 0, 0.05) inset;
 }
 
-.button.loading,
-.button.loading:hover,
-.button.loading:active,
-.button-rounded.loading,
-button.loading,
-button.loading:hover,
-button.loading:active {
+.swee-button.loading,
+.swee-button.loading:hover,
+.swee-button.loading:active,
+.swee-button-rounded.loading {
   background-color: #ffffff;
   background-image: none;
   color: #ffffff;
@@ -179,9 +161,8 @@ button.loading:active {
   cursor: wait;
 }
 
-.button.loading:before,
-.button-rounded.loading:before,
-button.loading:before {
+.swee-button.loading:before,
+.swee-button-rounded.loading:before {
   margin: -10px 0 0 -10px;
   width: 20px;
   height: 20px;
@@ -203,48 +184,28 @@ button.loading:before {
   animation: animation-rotate 750ms linear infinite;
 }
 
-.button-link:hover,
-.button-link:active,
-.button-link:focus {
+.swee-button-link:hover,
+.swee-button-link:active,
+.swee-button-link:focus {
   background: none;
   color: var(--linkHover);
   text-decoration: underline;
 }
 
-.button.button-primary.loading:before,
-button.button-primary.loading:before,
-input[type="submit"].button-primary.loading:before,
-input[type="reset"].button-primary.loading:before,
-input[type="button"].button-primary.loading:before {
+.swee-button.button-primary.loading:before {
   border-top-color: var(--primary-color);
 }
-.button.button-success.loading:before,
-button.button-success.loading:before,
-input[type="submit"].button-success.loading:before,
-input[type="reset"].button-success.loading:before,
-input[type="button"].button-success.loading:before {
-  border-top-color: #15cb6e;
+.swee-button.button-success.loading:before {
+  border-top-color: var(--success-color);
 }
-.button.button-error.loading:before,
-button.button-error.loading:before,
-input[type="submit"].button-error.loading:before,
-input[type="reset"].button-error.loading:before,
-input[type="button"].button-error.loading:before {
-  border-top-color: #e7142b;
+.swee-button.button-error.loading:before {
+  border-top-color: var(--error-color);
 }
-.button.button-warning.loading:before,
-button.button-warning.loading:before,
-input[type="submit"].button-warning.loading:before,
-input[type="reset"].button-warning.loading:before,
-input[type="button"].button-warning.loading:before {
-  border-top-color: #f9b801;
+.swee-button.button-warning.loading:before {
+  border-top-color: var(--warning-color);
 }
-.button.button-secondary.loading:before,
-button.button-secondary.loading:before,
-input[type="submit"].button-secondary.loading:before,
-input[type="reset"].button-secondary.loading:before,
-input[type="button"].button-secondary.loading:before {
-  border-top-color: #5d8afb;
+.swee-button.button-secondary.loading:before {
+  border-top-color: var(--secondary-color);
 }
 
 @-webkit-keyframes animation-rotate {

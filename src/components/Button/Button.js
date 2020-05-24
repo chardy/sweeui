@@ -26,9 +26,9 @@ export default function Button({
 
   const buttonType = "" || (type ? ("button-" + type).mod() : "");
   const buttonLoading = loading ? "loading".mod() : "";
-  const buttonRounded = rounded ? "button-rounded".mod() : "";
+  const buttonRounded = rounded ? "swee-button-rounded".mod() : "";
   const classNameArray = [
-    "button".mod(),
+    "swee-button".mod(),
     buttonType || "",
     buttonLoading || "",
     buttonRounded || "",
@@ -58,7 +58,9 @@ Button.propTypes = {
     "success",
     "error",
     "warning",
-    "secondary"
+    "secondary",
+    "link",
+    "light"
   ]),
   className: PropTypes.string,
   disabled: PropTypes.bool,

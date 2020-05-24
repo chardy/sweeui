@@ -37,6 +37,10 @@ html {
   --input-border-color: #BBC1E1;
   --placeholder-color: #AAAAAA;
   --placeholder-font-weight: 300;
+  --success-color: #15cb6e;
+  --warning-color: #f9b801;
+  --error-color: #e7142b;
+  --secondary-color: #5a4fff;
 }
 
 .full-width { width: 100%; }
