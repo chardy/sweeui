@@ -33,10 +33,10 @@
     "deploy": "gh-pages -d styleguide"
   },
   "peerDependencies": {
+    "classnames": "^2.2.6",
     "prop-types": "^15.7.2",
     "react": "^16.13.0",
-    "react-dom": "^16.13.0",
-    "classnames": "^2.2.6"
+    "react-dom": "^16.13.0"
   },
   "devDependencies": {
     "@babel/core": "^7.8.7",
@@ -168,5 +168,8 @@
       "@babel/plugin-proposal-class-properties",
       "transform-react-remove-prop-types"
     ]
+  },
+  "dependencies": {
+    "rollup-plugin-gzip": "^2.5.0"
   }
 }
