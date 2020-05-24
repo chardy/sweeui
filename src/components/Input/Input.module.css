@@ -349,6 +349,10 @@ input[type="radio"]:checked {
   --s: 0.5;
 }
 
+.Input:global.sui-input-error {
+  border-color: var(--error-color) !important;
+}
+
 @media only screen and (max-width: 568px) {
   button[type="submit"] {
     margin: 0.7em 0 0;

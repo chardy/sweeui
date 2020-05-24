@@ -33,6 +33,7 @@ html {
 
   /* color theme */
   --primary-color: #275efe;
+  --error-color: #EE0000;
   --input-border-color: #BBC1E1;
   --placeholder-color: #AAAAAA;
   --placeholder-font-weight: 300;

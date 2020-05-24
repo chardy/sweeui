@@ -1,16 +1,19 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { classNames, classNameObject } from "../../utils/format";
 import inputModule from './Input.module.css'
 
 const Input = React.forwardRef(
   (
     {
       id,
+      className,
       onChange,
       placeholder,
       size,
       type,
       loading,
+      error,
       color,
       name,
       autoComplete
@@ -18,6 +21,7 @@ const Input = React.forwardRef(
     ref
   ) => {
     String.prototype.mod = function() { return !!inputModule? inputModule[this] : this }
+    let classes = { ...classNameObject(className), [inputModule["Input"]]: true }
 
     let inputType = type;
     let isSwitch = false;
@@ -26,6 +30,9 @@ const Input = React.forwardRef(
       inputType = "checkbox";
       isSwitch = true;
     }
+
+    if (error) { classes["sui-input-error"] = true }
+
     const styles = {
       color,
       fontSize: Input.sizes[size]
@@ -39,7 +46,10 @@ const Input = React.forwardRef(
         placeholder={placeholder}
         ref={ref}
         name={name}
-        className={isSwitch ? "switch".mod() : ""}
+        className={classNames({
+          ...classes,
+          ["switch".mod()]: isSwitch
+        })}
         autoComplete={autoComplete}
       />
     );
@@ -64,6 +74,8 @@ Input.propTypes = {
     "switch"
   ]),
   loading: PropTypes.bool,
+  error: PropTypes.bool,
+  className: PropTypes.string,
   onChange: PropTypes.func,
   value: PropTypes.func,
   defaultValue: PropTypes.func,
@@ -75,9 +87,11 @@ Input.propTypes = {
   id: PropTypes.string
 };
 Input.defaultProps = {
+  className: "",
   type: "text",
   size: "normal",
   loading: false,
+  error: false,
   color: "#000000",
   autoComplete: "off"
 };

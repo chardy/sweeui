@@ -112,7 +112,7 @@ export default function Flex({
   if (typeof onClick === 'function') { fns.onClick = onClick }
 
   return (
-    <div className={classNames(classes, flexModule)} style={styleAttrs} {...fns}>
+    <div className={classNames(classes)} style={styleAttrs} {...fns}>
       {children}
     </div>
   );
