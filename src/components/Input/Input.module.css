@@ -114,8 +114,8 @@ input[type="checkbox"]:focus {
   outline: thin dotted #333;
   outline: 1px auto var(--primary-color);
 }
-.form-checkbox,
-.form-radio {
+.sui-form-checkbox,
+.sui-form-radio {
   margin: 0.5em 0;
   display: block;
 }
@@ -386,32 +386,32 @@ input[type="radio"]:checked {
     width: 100%;
   }
 
-  .form-group input:not([type]),
-  .form-group input[type="text"],
-  .form-group input[type="password"],
-  .form-group input[type="email"],
-  .form-group input[type="url"],
-  .form-group input[type="date"],
-  .form-group input[type="month"],
-  .form-group input[type="time"],
-  .form-group input[type="datetime"],
-  .form-group input[type="datetime-local"],
-  .form-group input[type="week"],
-  .form-group input[type="number"],
-  .form-group input[type="search"],
-  .form-group input[type="tel"],
-  .form-group input[type="color"] {
+  .sui-form form-group input:not([type]),
+  .sui-form form-group input[type="text"],
+  .sui-form form-group input[type="password"],
+  .sui-form form-group input[type="email"],
+  .sui-form form-group input[type="url"],
+  .sui-form form-group input[type="date"],
+  .sui-form form-group input[type="month"],
+  .sui-form form-group input[type="time"],
+  .sui-form form-group input[type="datetime"],
+  .sui-form form-group input[type="datetime-local"],
+  .sui-form form-group input[type="week"],
+  .sui-form form-group input[type="number"],
+  .sui-form form-group input[type="search"],
+  .sui-form form-group input[type="tel"],
+  .sui-form form-group input[type="color"] {
     margin-bottom: 0;
   }
 
-  .form-aligned .input-group label {
+  .sui-form-aligned .input-group label {
     margin-bottom: 0.3em;
     text-align: left;
     display: block;
     width: 100%;
   }
 
-  .form-aligned .action-group {
+  .sui-form-aligned .action-group {
     margin: 0;
   }
 }

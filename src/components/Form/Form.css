@@ -1,20 +1,20 @@
-.form-stacked input[type="text"],
-.form-stacked input[type="password"],
-.form-stacked input[type="email"],
-.form-stacked input[type="url"],
-.form-stacked input[type="date"],
-.form-stacked input[type="month"],
-.form-stacked input[type="time"],
-.form-stacked input[type="datetime"],
-.form-stacked input[type="datetime-local"],
-.form-stacked input[type="week"],
-.form-stacked input[type="number"],
-.form-stacked input[type="search"],
-.form-stacked input[type="tel"],
-.form-stacked input[type="color"],
-.form-stacked select,
-.form-stacked label,
-.form-stacked textarea {
+.sui-form-stacked input[type="text"],
+.sui-form-stacked input[type="password"],
+.sui-form-stacked input[type="email"],
+.sui-form-stacked input[type="url"],
+.sui-form-stacked input[type="date"],
+.sui-form-stacked input[type="month"],
+.sui-form-stacked input[type="time"],
+.sui-form-stacked input[type="datetime"],
+.sui-form-stacked input[type="datetime-local"],
+.sui-form-stacked input[type="week"],
+.sui-form-stacked input[type="number"],
+.sui-form-stacked input[type="search"],
+.sui-form-stacked input[type="tel"],
+.sui-form-stacked input[type="color"],
+.sui-form-stacked select,
+.sui-form-stacked label,
+.sui-form-stacked textarea {
   display: block;
   margin: 0.25em 0;
 }
@@ -29,49 +29,49 @@ fieldset {
 Need to separate out the :not() selector from the rest of the CSS 2.1 selectors
 since IE8 won't execute CSS that contains a CSS3 selector.
 */
-.form-stacked input:not([type]) {
+.sui-form-stacked input:not([type]) {
   display: block;
   margin: 0.25em 0;
 }
-.form-aligned input,
-.form-aligned textarea,
-.form-aligned select {
+.sui-form-aligned input,
+.sui-form-aligned textarea,
+.sui-form-aligned select {
   display: inline-block;
   *display: inline;
   *zoom: 1;
   vertical-align: middle;
 }
-.form-aligned textarea {
+.sui-form-aligned textarea {
   vertical-align: top;
 }
 
 /* Aligned Forms */
-.form-aligned .input-group {
+.sui-form-aligned .input-group {
   margin-bottom: 0.5em;
 }
-.form-aligned .input-group label {
+.sui-form-aligned .input-group label {
   text-align: right;
   display: inline-block;
   vertical-align: middle;
   width: 10em;
   margin: 0 1em 0 0;
 }
-.form-aligned .action-group {
+.sui-form-aligned .action-group {
   margin: 0 0 0 11em;
 }
 
 /* Rounded Inputs */
-.form input.input-rounded,
-.form .input-rounded {
+.sui-form input.input-rounded,
+.sui-form .input-rounded {
   border-radius: 2em;
   padding: 0.5em 1em;
 }
 
 /* Grouped Inputs */
-.form fieldset.form-group {
+.sui-form fieldset.form-group {
   margin-bottom: 0.5em;
 }
-.form .form-group input {
+.sui-form .form-group input {
   display: block;
   padding: 10px;
   margin: 0;
@@ -80,56 +80,56 @@ since IE8 won't execute CSS that contains a CSS3 selector.
   top: -1px;
   width: 300px;
 }
-.form .form-group input:focus {
+.sui-form .form-group input:focus {
   z-index: 2;
 }
-.form .form-group input:first-child {
+.sui-form .form-group input:first-child {
   top: 1px;
   border-radius: 4px 4px 0 0;
 }
-.form .form-group input:last-child {
+.sui-form .form-group input:last-child {
   top: -2px;
   border-radius: 0 0 4px 4px;
 }
-.form .form-group button {
+.sui-form .form-group button {
   margin: 0.35em 0;
 }
 
-.form .full-width {
+.sui-form .full-width {
   width: 100%;
 }
 
 @media only screen and (max-width: 568px) {
-  .form-group input:not([type]),
-  .form-group input[type="text"],
-  .form-group input[type="password"],
-  .form-group input[type="email"],
-  .form-group input[type="url"],
-  .form-group input[type="date"],
-  .form-group input[type="month"],
-  .form-group input[type="time"],
-  .form-group input[type="datetime"],
-  .form-group input[type="datetime-local"],
-  .form-group input[type="week"],
-  .form-group input[type="number"],
-  .form-group input[type="search"],
-  .form-group input[type="tel"],
-  .form-group input[type="color"] {
+  .sui-form .form-group input:not([type]),
+  .sui-form .form-group input[type="text"],
+  .sui-form .form-group input[type="password"],
+  .sui-form .form-group input[type="email"],
+  .sui-form .form-group input[type="url"],
+  .sui-form .form-group input[type="date"],
+  .sui-form .form-group input[type="month"],
+  .sui-form .form-group input[type="time"],
+  .sui-form .form-group input[type="datetime"],
+  .sui-form .form-group input[type="datetime-local"],
+  .sui-form .form-group input[type="week"],
+  .sui-form .form-group input[type="number"],
+  .sui-form .form-group input[type="search"],
+  .sui-form .form-group input[type="tel"],
+  .sui-form .form-group input[type="color"] {
     margin-bottom: 0;
   }
 
-  .form .form-group input {
+  .sui-form .form-group input {
     width: 100%;
   }
 
-  .form-aligned .input-group label {
+  .sui-form-aligned .input-group label {
     margin-bottom: 0.3em;
     text-align: left;
     display: block;
     width: 100%;
   }
 
-  .form-aligned .action-group {
+  .sui-form-aligned .action-group {
     margin: 0;
   }
 }
