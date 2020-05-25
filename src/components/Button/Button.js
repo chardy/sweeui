@@ -60,7 +60,8 @@ Button.propTypes = {
     "warning",
     "secondary",
     "link",
-    "light"
+    "light",
+    "ghost"
   ]),
   className: PropTypes.string,
   disabled: PropTypes.bool,
