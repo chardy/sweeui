@@ -71,7 +71,8 @@ Input.propTypes = {
     "search",
     "tel",
     "color",
-    "switch"
+    "switch",
+    "hidden",
   ]),
   loading: PropTypes.bool,
   error: PropTypes.bool,
