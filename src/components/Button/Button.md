@@ -40,6 +40,8 @@ Button different types:
 <Button type="success">Button</Button>
 <Button type="error">Button</Button>
 <Button type="warning">Button</Button>
+<Button type="link">Button</Button>
+<Button type="light">Button</Button>
 ```
 
 Button different types rounded and one is loading:
