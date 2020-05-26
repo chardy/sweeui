@@ -48,9 +48,9 @@
   background: transparent;
   border: transparent;
   box-shadow: none;
-  padding: 0.5em 0;
+  padding: 0;
   margin-right: 0;
-  color: var(--link);
+  color: var(--link-color);
   margin-right: 0;
 }
 
@@ -61,6 +61,7 @@
   border: transparent;
   box-shadow: none;
   text-decoration: underline;
+  color: var(--link-hover-color);
 }
 
 /* Ghost Button */
