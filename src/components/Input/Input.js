@@ -15,7 +15,6 @@ const Input = React.forwardRef(
       loading,
       error,
       readonly,
-      multiple,
       color,
       name,
       autoComplete
