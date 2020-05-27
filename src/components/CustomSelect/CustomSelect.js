@@ -1,16 +1,18 @@
 import React, { useState, useEffect } from "react";
-import PropTypes from "prop-types";
 import { classNames, classNameObject } from "../../utils/format";
+import PropTypes from "prop-types";
 import ModuleCSS from './CustomSelect.module.css'
 
 export default function CustomSelect({
   className,
   children,
+  name,
   defaultValue,
   type,
   width,
   placeholder,
-  onChange
+  elementRef,
+  onChange,
 }) {
   const [visible, setVisible] = useState(false)
   const [outsideClick, setOutsideClick] = useState(false)
@@ -89,10 +91,19 @@ export default function CustomSelect({
                 })}
                 onClick={() => setActiveChild(child)}
               >
-                {child}
+                {child.props.children}
               </div>
             ))
           }
+          <select name={name} ref={elementRef} value={!!activeChild && activeChild.props.value || defaultValue || null}>
+            {
+              children.map(child => (
+                <option key={child.props.value} value={child.props.value}>
+                  {child.props.children}
+                </option>
+              ))
+            }
+          </select>
         </div>
       </div>
       <style jsx global>{`
@@ -104,14 +115,18 @@ export default function CustomSelect({
 
 CustomSelect.propTypes = {
   className: PropTypes.string,
+  name: PropTypes.string,
   type: PropTypes.oneOf(["default", "primary"]),
   width: PropTypes.string,
   children: PropTypes.node.isRequired,
   placeholder: PropTypes.string,
-  onChange: PropTypes.func
+  elementRef: PropTypes.func,
+  onChange: PropTypes.func,
 };
+
 CustomSelect.defaultProps = {
   className: null,
+  name: null,
   type: "default",
   placeholder: null,
 };

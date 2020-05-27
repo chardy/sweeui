@@ -101,11 +101,11 @@
 }
 
 .CustomSelect :global .sui-select-items div:first-child {
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
 }
 
-.CustomSelect :global .sui-select-items div:last-child {
-  border-bottom-left-radius: 3px;
-  border-bottom-right-radius: 3px; 
+.CustomSelect :global .sui-select-items div:last-of-type {
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px; 
 }
