@@ -32,7 +32,10 @@ html {
   /*  font-size: 62.5%;*/
 
   /* color theme */
+  --base-color: #111111;
   --primary-color: #275efe;
+  --primary-button-color: #275efe;
+  --background-color: #f7fbff;
   --error-color: #EE0000;
   --input-border-color: #BBC1E1;
   --placeholder-color: #AAAAAA;
