@@ -76,6 +76,8 @@
   left: 0;
   right: 0;
   z-index: 99;
+  max-height: 250px;
+  overflow-y: auto;
   border-radius: 4px;
 }
 

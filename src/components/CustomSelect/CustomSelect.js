@@ -20,7 +20,7 @@ export default function CustomSelect({
   const [activeChild, setActiveChild] = useState(
     !!defaultValue && !!children && !!children.find(child => child.props.value === defaultValue)?
       children.find(child => child.props.value === defaultValue) :
-      { props: { value: placeholder } }
+      { props: { children: placeholder } }
   )
 
   let classes = { ...classNameObject(className), [ModuleCSS["CustomSelect"]]: true }
@@ -82,7 +82,7 @@ export default function CustomSelect({
         style={styleAttrs}
       >
         <div className="sui-select-selected line-clamp line-clamp-1" onClick={handleSetInside}>
-          {activeChild.props.value}
+          {activeChild.props.children}
         </div>
         <div className={classNames({ "sui-select-items": true })}>
           {
