@@ -58,8 +58,9 @@
 .CustomSelect :global .sui-select-items div,
 .CustomSelect :global .sui-select-selected {
   color: var(--base-color);
-  padding: 0.5em 0.6em;
+  padding: 0.1em 0.6em;
   cursor: pointer;
+  line-height: 2.1em;
 }
 
 .CustomSelect:global.sui-select-primary .sui-select-selected {

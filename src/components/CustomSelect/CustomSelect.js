@@ -33,6 +33,10 @@ export default function CustomSelect({
     setOutsideClick(true)
   }
 
+  function handleSetInside(ev) {
+    setInsideClick(true)
+  }
+
   useEffect(() => {
     if (visible) {
       document.body.classList.add('sui-select-open')
@@ -51,12 +55,13 @@ export default function CustomSelect({
   useEffect(() => {
     if (outsideClick && !insideClick) {
       setVisible(false)
-    } else if (insideClick) {
+      setOutsideClick(false)
+      setInsideClick(false)
+    } else if (outsideClick && insideClick) {
       setVisible(!visible)
+      setOutsideClick(false)
+      setInsideClick(false)
     }
-
-    setOutsideClick(false)
-    setInsideClick(false)
   }, [outsideClick, insideClick])
 
   useEffect(() => {
@@ -74,10 +79,9 @@ export default function CustomSelect({
           ...classes,
           "sui-select-hide": !visible
         })}
-        onClick={() => setOutsideClick(true)}
         style={styleAttrs}
       >
-        <div className="sui-select-selected" onClick={() => { setInsideClick(true) }}>
+        <div className="sui-select-selected line-clamp line-clamp-1" onClick={handleSetInside}>
           {activeChild.props.value}
         </div>
         <div className={classNames({ "sui-select-items": true })}>
