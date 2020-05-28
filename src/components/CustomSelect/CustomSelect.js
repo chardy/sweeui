@@ -46,6 +46,14 @@ export default function CustomSelect({
   }, [visible])
 
   useEffect(() => {
+    setActiveChild(
+      !!defaultValue && !!children && !!children.find(child => child.props.value === defaultValue)?
+        children.find(child => child.props.value === defaultValue) :
+        { props: { children: placeholder } }
+    )
+  }, [defaultValue])
+
+  useEffect(() => {
     document.addEventListener('click', handleSetOutside)
     return function cleanup() {
       document.removeEventListener('click', handleSetOutside)
