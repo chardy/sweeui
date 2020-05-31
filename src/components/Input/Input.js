@@ -14,7 +14,7 @@ const Input = React.forwardRef(
       type,
       loading,
       error,
-      readonly,
+      readOnly,
       color,
       name,
       autoComplete
@@ -48,7 +48,7 @@ const Input = React.forwardRef(
         placeholder={placeholder}
         ref={ref}
         name={name}
-        readonly={readonly && "on"}
+        readOnly={readOnly && true}
         className={classNames({
           ...classes,
           ["switch".mod()]: isSwitch
@@ -79,7 +79,7 @@ Input.propTypes = {
   ]),
   loading: PropTypes.bool,
   error: PropTypes.bool,
-  readonly: PropTypes.bool,
+  readOnly: PropTypes.bool,
   className: PropTypes.string,
   onChange: PropTypes.func,
   value: PropTypes.func,
@@ -97,7 +97,7 @@ Input.defaultProps = {
   size: "normal",
   loading: false,
   error: false,
-  readonly: false,
+  readOnly: false,
   color: "#000000",
   autoComplete: "off"
 };
