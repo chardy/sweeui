@@ -1,11 +1,12 @@
 import React from 'react'
 import inputModule from '../Input/Input.module.css'
+import { classNames, classNameObject } from "../../utils/format";
 
 export default function Label({ children, className }) {
-  // String.prototype.mod = function() { return !!inputModule? inputModule[this] : this }
+  let classes = { ...classNameObject(className), [inputModule["Input"]]: true }
 
   return (
-    <label className={className}>
+    <label className={classNames(classes)}>
       { children }
     </label>
   )

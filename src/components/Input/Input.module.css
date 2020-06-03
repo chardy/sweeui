@@ -1,18 +1,18 @@
-input[type="text"],
-input[type="password"],
-input[type="email"],
-input[type="url"],
-input[type="date"],
-input[type="month"],
-input[type="time"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="week"],
-input[type="number"],
-input[type="search"],
-input[type="tel"],
-input[type="color"],
-textarea {
+input.Input[type="text"],
+input.Input[type="password"],
+input.Input[type="email"],
+input.Input[type="url"],
+input.Input[type="date"],
+input.Input[type="month"],
+input.Input[type="time"],
+input.Input[type="datetime"],
+input.Input[type="datetime-local"],
+input.Input[type="week"],
+input.Input[type="number"],
+input.Input[type="search"],
+input.Input[type="tel"],
+input.Input[type="color"],
+textarea.Input {
   padding: 0.5em 0.6em;
   display: inline-block;
   border: 1px solid var(--input-border-color);
@@ -26,7 +26,7 @@ textarea {
   appearance: none;
 }
 
-select {
+select.Input {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -46,11 +46,11 @@ select {
   min-width: 38px;
 }
 
-input[type="text"],
-input[type="password"],
-input[type="email"],
-input[type="url"],
-textarea {
+input.Input[type="text"],
+input.Input[type="password"],
+input.Input[type="email"],
+input.Input[type="url"],
+textarea.Input {
   width: 300px;
 }
 
@@ -58,7 +58,7 @@ textarea {
 Need to separate out the :not() selector from the rest of the CSS 2.1 selectors
 since IE8 won't execute CSS that contains a CSS3 selector.
 */
-input:not([type]) {
+input.Input:not([type]) {
   padding: 0.5em 0.6em;
   display: inline-block;
   border: 1px solid #ccc;
@@ -71,26 +71,26 @@ input:not([type]) {
 
 /* Chrome (as of v.32/34 on OS X) needs additional room for color to display. */
 /* May be able to remove this tweak as color inputs become more standardized across browsers. */
-input[type="color"] {
+input.Input[type="color"] {
   padding: 0.2em 0.5em;
 }
 
-input[type="text"]:focus,
-input[type="password"]:focus,
-input[type="email"]:focus,
-input[type="url"]:focus,
-input[type="date"]:focus,
-input[type="month"]:focus,
-input[type="time"]:focus,
-input[type="datetime"]:focus,
-input[type="datetime-local"]:focus,
-input[type="week"]:focus,
-input[type="number"]:focus,
-input[type="search"]:focus,
-input[type="tel"]:focus,
-input[type="color"]:focus,
-select:focus,
-textarea:focus {
+input.Input[type="text"]:focus,
+input.Input[type="password"]:focus,
+input.Input[type="email"]:focus,
+input.Input[type="url"]:focus,
+input.Input[type="date"]:focus,
+input.Input[type="month"]:focus,
+input.Input[type="time"]:focus,
+input.Input[type="datetime"]:focus,
+input.Input[type="datetime-local"]:focus,
+input.Input[type="week"]:focus,
+input.Input[type="number"]:focus,
+input.Input[type="search"]:focus,
+input.Input[type="tel"]:focus,
+input.Input[type="color"]:focus,
+select.Input:focus,
+textarea.Input:focus {
   outline: 0;
   outline: thin dotted \9; /* IE6-9 */
   border-color: var(--primary-color);
@@ -102,15 +102,15 @@ textarea:focus {
 Need to separate out the :not() selector from the rest of the CSS 2.1 selectors
 since IE8 won't execute CSS that contains a CSS3 selector.
 */
-input:not([type]):focus {
+input.Input:not([type]):focus {
   outline: 0;
   outline: thin dotted \9; /* IE6-9 */
   border-color: var(--primary-color);
 }
 
-input[type="file"]:focus,
-input[type="radio"]:focus,
-input[type="checkbox"]:focus {
+input.Input[type="file"]:focus,
+input.Input[type="radio"]:focus,
+input.Input[type="checkbox"]:focus {
   outline: thin dotted #333;
   outline: 1px auto var(--primary-color);
 }
@@ -120,22 +120,22 @@ input[type="checkbox"]:focus {
   display: block;
 }
 
-input[type="text"][disabled],
-input[type="password"][disabled],
-input[type="email"][disabled],
-input[type="url"][disabled],
-input[type="date"][disabled],
-input[type="month"][disabled],
-input[type="time"][disabled],
-input[type="datetime"][disabled],
-input[type="datetime-local"][disabled],
-input[type="week"][disabled],
-input[type="number"][disabled],
-input[type="search"][disabled],
-input[type="tel"][disabled],
-input[type="color"][disabled],
-select[disabled],
-textarea[disabled] {
+input.Input[type="text"][disabled],
+input.Input[type="password"][disabled],
+input.Input[type="email"][disabled],
+input.Input[type="url"][disabled],
+input.Input[type="date"][disabled],
+input.Input[type="month"][disabled],
+input.Input[type="time"][disabled],
+input.Input[type="datetime"][disabled],
+input.Input[type="datetime-local"][disabled],
+input.Input[type="week"][disabled],
+input.Input[type="number"][disabled],
+input.Input[type="search"][disabled],
+input.Input[type="tel"][disabled],
+input.Input[type="color"][disabled],
+select.Input[disabled],
+textarea.Input[disabled] {
   cursor: not-allowed;
   background-color: #eaeded;
   color: #cad2d3;
@@ -145,25 +145,25 @@ textarea[disabled] {
 Need to separate out the :not() selector from the rest of the CSS 2.1 selectors
 since IE8 won't execute CSS that contains a CSS3 selector.
 */
-input:not([type])[disabled] {
+input.Input:not([type])[disabled] {
   cursor: not-allowed;
   background-color: #eaeded;
   color: #cad2d3;
 }
-input[readonly],
-select[readonly],
-textarea[readonly] {
+input.Input[readonly],
+select.Input[readonly],
+textarea.Input[readonly] {
   background: #eee; /* menu hover bg color */
   color: #777; /* menu text color */
   border-color: #ccc;
 }
 
-input.invalid,
-textarea.invalid,
-select.invalid,
-input:focus.invalid,
-textarea:focus.invalid,
-select:focus.invalid {
+input.Input:global.invalid,
+textarea.Input:global.invalid,
+select.Input:global.invalid,
+input.Input:focus:global.invalid,
+textarea.Input:focus:global.invalid,
+select.Input:focus:global.invalid {
   color: #ee5f5b;
   border-color: #ee5f5b;
 }
@@ -180,21 +180,21 @@ textarea:focus:invalid:focus,
 select:focus:invalid:focus {
   border-color: #e9322d;
 }
-input[type="file"]:focus:invalid:focus,
-input[type="radio"]:focus:invalid:focus,
-input[type="checkbox"]:focus:invalid:focus {
+input.Input[type="file"]:focus:invalid:focus,
+input.Input[type="radio"]:focus:invalid:focus,
+input.Input[type="checkbox"]:focus:invalid:focus {
   outline-color: #e9322d;
 }
 
-select[multiple] {
+select.Input[multiple] {
   height: auto;
   padding-right: 0.6em;
   background: none;
 }
-label {
+label.Input {
   margin: 0.5em 0 0.2em;
 }
-legend {
+legend.Input {
   display: block;
   width: 100%;
   padding: 0.3em 0;
@@ -203,8 +203,8 @@ legend {
   border-bottom: 1px solid #e5e5e5;
 }
 
-input[type="checkbox"],
-input[type="radio"] {
+input.Input[type="checkbox"],
+input.Input[type="radio"] {
   --active: var(--primary-color);
   --active-inner: #fff;
   --focus: 2px rgba(39, 94, 254, 0.3);
@@ -227,8 +227,8 @@ input[type="radio"] {
   -webkit-transition: background 0.3s, border-color 0.3s, box-shadow 0.2s;
   transition: background 0.3s, border-color 0.3s, box-shadow 0.2s;
 }
-input[type="checkbox"]:after,
-input[type="radio"]:after {
+input.Input[type="checkbox"]:after,
+input.Input[type="radio"]:after {
   content: "";
   display: block;
   left: 0;
@@ -244,51 +244,51 @@ input[type="radio"]:after {
     opacity var(--d-o, 0.2s),
     -webkit-transform var(--d-t, 0.3s) var(--d-t-e, ease);
 }
-input[type="checkbox"]:checked,
-input[type="radio"]:checked {
+input.Input[type="checkbox"]:checked,
+input.Input[type="radio"]:checked {
   --b: var(--active);
   --bc: var(--active);
   --d-o: 0.3s;
   --d-t: 0.6s;
   --d-t-e: cubic-bezier(0.2, 0.85, 0.32, 1.2);
 }
-input[type="checkbox"]:disabled,
-input[type="radio"]:disabled {
+input.Input[type="checkbox"]:disabled,
+input.Input[type="radio"]:disabled {
   --b: var(--disabled);
   cursor: not-allowed;
   opacity: 0.9;
 }
-input[type="checkbox"]:disabled:checked,
-input[type="radio"]:disabled:checked {
+input.Input[type="checkbox"]:disabled:checked,
+input.Input[type="radio"]:disabled:checked {
   --b: var(--disabled-inner);
   --bc: var(--border);
 }
-input[type="checkbox"]:disabled + label,
-input[type="radio"]:disabled + label {
+input.Input[type="checkbox"]:disabled + label,
+input.Input[type="radio"]:disabled + label {
   cursor: not-allowed;
 }
-input[type="checkbox"]:hover:not(:checked):not(:disabled),
-input[type="radio"]:hover:not(:checked):not(:disabled) {
+input.Input[type="checkbox"]:hover:not(:checked):not(:disabled),
+input.Input[type="radio"]:hover:not(:checked):not(:disabled) {
   --bc: var(--border-hover);
 }
-input[type="checkbox"]:focus,
-input[type="radio"]:focus {
+input.Input[type="checkbox"]:focus,
+input.Input[type="radio"]:focus {
   box-shadow: 0 0 0 var(--focus);
 }
-input[type="checkbox"]:not(.switch),
-input[type="radio"]:not(.switch) {
+input.Input[type="checkbox"]:not(.switch),
+input.Input[type="radio"]:not(.switch) {
   width: 21px;
 }
-input[type="checkbox"]:not(.switch):after,
-input[type="radio"]:not(.switch):after {
+input.Input[type="checkbox"]:not(.switch):after,
+input.Input[type="radio"]:not(.switch):after {
   opacity: var(--o, 0);
 }
-input[type="checkbox"]:not(.switch):checked,
-input[type="radio"]:not(.switch):checked {
+input.Input[type="checkbox"]:not(.switch):checked,
+input.Input[type="radio"]:not(.switch):checked {
   --o: 1;
 }
-input[type="checkbox"] + label,
-input[type="radio"] + label {
+input.Input[type="checkbox"] + label,
+input.Input[type="radio"] + label {
   display: inline-block;
   cursor: pointer;
   margin: 2px 0 0 4px;
@@ -296,10 +296,10 @@ input[type="radio"] + label {
   vertical-align: top;
 }
 
-input[type="checkbox"]:not(.switch) {
+input.Input[type="checkbox"]:not(.switch) {
   border-radius: 5px;
 }
-input[type="checkbox"]:not(.switch):after {
+input.Input[type="checkbox"]:not(.switch):after {
   width: 5px;
   height: 9px;
   border: 2px solid var(--active-inner);
@@ -310,14 +310,14 @@ input[type="checkbox"]:not(.switch):after {
   -webkit-transform: rotate(var(--r, 20deg));
   transform: rotate(var(--r, 20deg));
 }
-input[type="checkbox"]:not(.switch):checked {
+input.Input[type="checkbox"]:not(.switch):checked {
   --r: 43deg;
 }
-input[type="checkbox"].switch {
+input.Input[type="checkbox"]:global.switch {
   width: 38px;
   border-radius: 11px;
 }
-input[type="checkbox"].switch:after {
+input.Input[type="checkbox"]:global.switch:after {
   left: 2px;
   top: 2px;
   border-radius: 50%;
@@ -327,18 +327,18 @@ input[type="checkbox"].switch:after {
   -webkit-transform: translateX(var(--x, 0));
   transform: translateX(var(--x, 0));
 }
-input[type="checkbox"].switch:checked {
+input.Input[type="checkbox"]:global.switch:checked {
   --ab: var(--active-inner);
   --x: 17px;
 }
-input[type="checkbox"].switch:disabled:not(:checked):after {
+input.Input[type="checkbox"]:global.switch:disabled:not(:checked):after {
   opacity: 0.6;
 }
 
-input[type="radio"] {
+input.Input[type="radio"] {
   border-radius: 50%;
 }
-input[type="radio"]:after {
+input.Input[type="radio"]:after {
   width: 19px;
   height: 19px;
   border-radius: 50%;
@@ -347,7 +347,7 @@ input[type="radio"]:after {
   -webkit-transform: scale(var(--s, 0.7));
   transform: scale(var(--s, 0.7));
 }
-input[type="radio"]:checked {
+input.Input[type="radio"]:checked {
   --s: 0.5;
 }
 
@@ -360,64 +360,35 @@ input.Input:read-only {
 }
 
 @media only screen and (max-width: 568px) {
-  button[type="submit"] {
+  button.Input[type="submit"] {
     margin: 0.7em 0 0;
   }
 
-  input:not([type]),
-  input[type="text"],
-  input[type="password"],
-  input[type="email"],
-  input[type="url"],
-  input[type="date"],
-  input[type="month"],
-  input[type="time"],
-  input[type="datetime"],
-  input[type="datetime-local"],
-  input[type="week"],
-  input[type="number"],
-  input[type="search"],
-  input[type="tel"],
-  input[type="color"],
-  label {
+  input.Input:not([type]),
+  input.Input[type="text"],
+  input.Input[type="password"],
+  input.Input[type="email"],
+  input.Input[type="url"],
+  input.Input[type="date"],
+  input.Input[type="month"],
+  input.Input[type="time"],
+  input.Input[type="datetime"],
+  input.Input[type="datetime-local"],
+  input.Input[type="week"],
+  input.Input[type="number"],
+  input.Input[type="search"],
+  input.Input[type="tel"],
+  input.Input[type="color"],
+  label.Input {
     margin-bottom: 0.3em;
     display: block;
   }
 
-  input[type="text"],
-  input[type="password"],
-  input[type="email"],
-  input[type="url"],
-  textarea {
+  input.Input[type="text"],
+  input.Input[type="password"],
+  input.Input[type="email"],
+  input.Input[type="url"],
+  textarea.Input {
     width: 100%;
-  }
-
-  .sui-form form-group input:not([type]),
-  .sui-form form-group input[type="text"],
-  .sui-form form-group input[type="password"],
-  .sui-form form-group input[type="email"],
-  .sui-form form-group input[type="url"],
-  .sui-form form-group input[type="date"],
-  .sui-form form-group input[type="month"],
-  .sui-form form-group input[type="time"],
-  .sui-form form-group input[type="datetime"],
-  .sui-form form-group input[type="datetime-local"],
-  .sui-form form-group input[type="week"],
-  .sui-form form-group input[type="number"],
-  .sui-form form-group input[type="search"],
-  .sui-form form-group input[type="tel"],
-  .sui-form form-group input[type="color"] {
-    margin-bottom: 0;
-  }
-
-  .sui-form-aligned .input-group label {
-    margin-bottom: 0.3em;
-    text-align: left;
-    display: block;
-    width: 100%;
-  }
-
-  .sui-form-aligned .action-group {
-    margin: 0;
   }
 }

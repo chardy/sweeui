@@ -41,6 +41,11 @@ const Input = React.forwardRef(
 
     return (
       <input
+        className={classNames({
+          ...classes,
+          ["Input".mod()]: true,
+          ["switch".mod()]: isSwitch
+        })}
         id={id}
         style={styles}
         type={inputType}
@@ -49,10 +54,6 @@ const Input = React.forwardRef(
         ref={ref}
         name={name}
         readOnly={readOnly && true}
-        className={classNames({
-          ...classes,
-          ["switch".mod()]: isSwitch
-        })}
         autoComplete={autoComplete}
       />
     );

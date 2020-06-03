@@ -1,0 +1,345 @@
+.Form:global.sui-form-stacked input[type="text"],
+.Form:global.sui-form-stacked input[type="password"],
+.Form:global.sui-form-stacked input[type="email"],
+.Form:global.sui-form-stacked input[type="url"],
+.Form:global.sui-form-stacked input[type="date"],
+.Form:global.sui-form-stacked input[type="month"],
+.Form:global.sui-form-stacked input[type="time"],
+.Form:global.sui-form-stacked input[type="datetime"],
+.Form:global.sui-form-stacked input[type="datetime-local"],
+.Form:global.sui-form-stacked input[type="week"],
+.Form:global.sui-form-stacked input[type="number"],
+.Form:global.sui-form-stacked input[type="search"],
+.Form:global.sui-form-stacked input[type="tel"],
+.Form:global.sui-form-stacked input[type="color"],
+.Form:global.sui-form-stacked select,
+.Form:global.sui-form-stacked label,
+.Form:global.sui-form-stacked textarea {
+  display: block;
+  margin: 0.25em 0;
+}
+
+fieldset.Form {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/*
+Need to separate out the :not() selector from the rest of the CSS 2.1 selectors
+since IE8 won't execute CSS that contains a CSS3 selector.
+*/
+.Form:global.sui-form-stacked input:not([type]) {
+  display: block;
+  margin: 0.25em 0;
+}
+.Form:global.sui-form-aligned input,
+.Form:global.sui-form-aligned textarea,
+.Form:global.sui-form-aligned select {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  vertical-align: middle;
+}
+.Form:global.sui-form-aligned textarea {
+  vertical-align: top;
+}
+
+/* Aligned Forms */
+.Form:global.sui-form-aligned .input-group {
+  margin-bottom: 0.5em;
+}
+.Form:global.sui-form-aligned .input-group label {
+  text-align: right;
+  display: inline-block;
+  vertical-align: middle;
+  width: 10em;
+  margin: 0 1em 0 0;
+}
+.Form:global.sui-form-aligned .action-group {
+  margin: 0 0 0 11em;
+}
+
+/* Rounded Inputs */
+.Form:global.sui-form input.input-rounded,
+.Form:global.sui-form .input-rounded {
+  border-radius: 2em;
+  padding: 0.5em 1em;
+}
+
+/* Grouped Inputs */
+.Form:global.sui-form fieldset.form-group {
+  margin-bottom: 0.5em;
+}
+.Form:global.sui-form .form-group input {
+  display: block;
+  padding: 10px;
+  margin: 0;
+  border-radius: 0;
+  position: relative;
+  top: -1px;
+}
+.Form:global.sui-form .form-group input:focus {
+  z-index: 2;
+}
+.Form:global.sui-form .form-group input:first-child {
+  top: 1px;
+  border-radius: 4px 4px 0 0;
+}
+.Form:global.sui-form .form-group input:last-child {
+  top: -2px;
+  border-radius: 0 0 4px 4px;
+}
+.Form:global.sui-form .form-group button {
+  margin: 0.35em 0;
+}
+
+.Form:global.sui-form .full-width {
+  width: 100%;
+}
+
+.Form:global.sui-form form-group input:not([type]),
+.Form:global.sui-form form-group input[type="text"],
+.Form:global.sui-form form-group input[type="password"],
+.Form:global.sui-form form-group input[type="email"],
+.Form:global.sui-form form-group input[type="url"],
+.Form:global.sui-form form-group input[type="date"],
+.Form:global.sui-form form-group input[type="month"],
+.Form:global.sui-form form-group input[type="time"],
+.Form:global.sui-form form-group input[type="datetime"],
+.Form:global.sui-form form-group input[type="datetime-local"],
+.Form:global.sui-form form-group input[type="week"],
+.Form:global.sui-form form-group input[type="number"],
+.Form:global.sui-form form-group input[type="search"],
+.Form:global.sui-form form-group input[type="tel"],
+.Form:global.sui-form form-group input[type="color"] {
+  margin-bottom: 0;
+}
+
+.Form:global.sui-form-aligned .input-group label {
+  margin-bottom: 0.3em;
+  text-align: left;
+  display: block;
+  width: 100%;
+}
+
+.Form:global.sui-form-aligned .action-group {
+  margin: 0;
+}
+
+@media only screen and (max-width: 568px) {
+  .Form:global.sui-form .form-group input:not([type]),
+  .Form:global.sui-form .form-group input[type="text"],
+  .Form:global.sui-form .form-group input[type="password"],
+  .Form:global.sui-form .form-group input[type="email"],
+  .Form:global.sui-form .form-group input[type="url"],
+  .Form:global.sui-form .form-group input[type="date"],
+  .Form:global.sui-form .form-group input[type="month"],
+  .Form:global.sui-form .form-group input[type="time"],
+  .Form:global.sui-form .form-group input[type="datetime"],
+  .Form:global.sui-form .form-group input[type="datetime-local"],
+  .Form:global.sui-form .form-group input[type="week"],
+  .Form:global.sui-form .form-group input[type="number"],
+  .Form:global.sui-form .form-group input[type="search"],
+  .Form:global.sui-form .form-group input[type="tel"],
+  .Form:global.sui-form .form-group input[type="color"] {
+    margin-bottom: 0;
+  }
+
+  .Form:global.sui-form .form-group input {
+    width: 100%;
+  }
+
+  .Form:global.sui-form-aligned .input-group label {
+    margin-bottom: 0.3em;
+    text-align: left;
+    display: block;
+    width: 100%;
+  }
+
+  .Form:global.sui-form-aligned .action-group {
+    margin: 0;
+  }
+}
+
+/* Materialize */
+/* https://codepen.io/nathamanath/pen/ONxJWw */
+
+.Form:global.material {
+  width: 100%;
+  padding-top: 1em;
+  position: relative;
+}
+.Form:global.material .helper-text {
+  color: #888;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  font-size: 0.75em;
+  max-height: 0;
+}
+.Form:global.material.invalid,
+.Form:global.material .invalid {
+  color: red;
+  opacity: 1;
+}
+.Form:global.material.invalid input:not([type="checkbox"]):not([type="radio"]),
+.Form:global.material.invalid textarea {
+  border-color: red;
+}
+.Form:global.material.invalid
+  input:not([type="checkbox"]):not([type="radio"])
+  ~ .helper-text,
+.Form:global.material.invalid textarea ~ .helper-text {
+  color: red;
+  opacity: 1;
+}
+.Form:global.material.invalid input:not([type="checkbox"]):not([type="radio"]):focus,
+.Form:global.material.invalid textarea:focus {
+  border-color: red;
+}
+.Form:global.material.invalid
+  input:not([type="checkbox"]):not([type="radio"]):focus
+  ~ label,
+.Form:global.material.invalid textarea:focus ~ label {
+  color: red;
+}
+.Form:global.material textarea {
+  resize: none;
+  height: auto;
+  min-height: 30px;
+  max-height: 200px;
+  overflow: hidden;
+}
+.Form:global.material textarea:focus {
+  min-height: 60px;
+}
+.Form:global.material input:not([type="checkbox"]):not([type="radio"]),
+.Form:global.material textarea {
+  border: none;
+  width: 100%;
+  top: 20px;
+  border-bottom: 2px solid #888;
+  border-radius: 0;
+  transition: min-height 0.2s ease-in-out, border-color 0.2s ease-in-out;
+  height: 30px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.Form:global.material
+  input:not([type="checkbox"]):not([type="radio"]):focus
+  ~ .helper-text.validation-error,
+.Form:global.material textarea:focus ~ .helper-text.validation-error {
+  opacity: 0;
+}
+.Form:global.material input:not([type="checkbox"]):not([type="radio"]):invalid,
+.Form:global.material textarea:invalid {
+  box-shadow: none;
+}
+.Form:global.material input:not([type="checkbox"]):not([type="radio"]):invalid ~ label,
+.Form:global.material textarea:invalid ~ label {
+  transform: translateY(100%) scale(1);
+}
+.Form:global.material input:not([type="checkbox"]):not([type="radio"]):focus,
+.Form:global.material textarea:focus {
+  outline: none;
+  border-color: #2e9ff3;
+}
+.Form:global.material input:not([type="checkbox"]):not([type="radio"]):focus ~ label,
+.Form:global.material textarea:focus ~ label {
+  transform: translateY(0) scale(0.75);
+  color: #2e9ff3;
+}
+.Form:global.material input:not([type="checkbox"]):not([type="radio"]):focus ~ .helper-text,
+.Form:global.material textarea:focus ~ .helper-text {
+  opacity: 1;
+}
+.Form:global.material label {
+  transform: translateY(0) scale(0.75);
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  z-index: 2;
+  transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
+  transform-origin: 0 0;
+  cursor: text;
+  color: #888;
+}
+
+.Form:global.material label.normal {
+  transform: translateY(0) scale(1);
+  position: relative;
+}
+
+.Form:global.material.has-persistent-helper .helper-text {
+  opacity: 1;
+}
+
+.Form:global.material select {
+  height: 2.4em;
+  border: 1px solid #ccc;
+  background-color: white;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-shadow: inset 0 1px 3px #eee;
+  border-radius: 4px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.Form:global.material select.full-width {
+  width: 100%;
+}
+
+.Form:global.material input[type="checkbox"] {
+  position: relative;
+  top: -0.125rem;
+  margin: 0 0.25rem 0rem 0rem;
+  cursor: pointer;
+}
+.Form:global.material input[type="checkbox"]:before {
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  content: "";
+  position: absolute;
+  left: -0.125em;
+  top: -0.125rem;
+  z-index: 1;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 2px solid #dddddd;
+  background: #ffffff;
+}
+.Form:global.material input[type="checkbox"]:checked:before {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  height: 0.7rem;
+  border-color: #2e9ff3;
+  border-top-style: none;
+  border-right-style: none;
+}
+.Form:global.material input[type="checkbox"]:after {
+  content: "";
+  position: absolute;
+  top: -0.125rem;
+  left: -0.125rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  background: #fff;
+  cursor: pointer;
+}
+
+.Form:global.material input[type="radio"] {
+  position: relative;
+  margin: 0rem 0rem 0.5rem 0;
+  width: 1.1rem;
+  height: 1.1rem;
+  cursor: pointer;
+}
