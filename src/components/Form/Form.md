@@ -67,11 +67,19 @@ Form Fieldset Group:
   </Fieldset>
   <br />
   <Fieldset>
-    <select id="multi-state">
+    <Select id="select-one">
       <option>Singapore</option>
       <option>Malaysia</option>
       <option>Indonesia</option>
-    </select>
+    </Select>
+  </Fieldset>
+  <br/>
+  <Fieldset>
+    <Select id="select-two" error={true} className="Test">
+      <option>This country has a very long name</option>
+      <option>Malaysia</option>
+      <option>Indonesia</option>
+    </Select>
   </Fieldset>
   <br />
   <Fieldset type="action-group">

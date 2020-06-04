@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Grid, Col, Button, Form, Fieldset, Input, Box } from "sweeui";
+import { Grid, Col, Button, Form, Fieldset, Input, Box, Select } from "sweeui";
 
 export default function App() {
   return (
@@ -66,11 +66,11 @@ export default function App() {
         </Fieldset>
         <br />
         <Fieldset>
-          <select id="multi-state">
+          <Select id="multi-state">
             <option>Singapore</option>
             <option>Malaysia</option>
             <option>Indonesia</option>
-          </select>
+          </Select>
         </Fieldset>
         <br />
         <Fieldset type="action-group">
