@@ -8,7 +8,6 @@ const Input = React.forwardRef(
     {
       id,
       className,
-      onChange,
       placeholder,
       size,
       type,
@@ -16,7 +15,11 @@ const Input = React.forwardRef(
       readOnly,
       color,
       name,
-      autoComplete
+      autoComplete,
+      autoFocus,
+      spellCheck,
+      onChange,
+      onBlur
     },
     ref
   ) => {
@@ -33,10 +36,9 @@ const Input = React.forwardRef(
 
     if (error) { classes["sui-input-error"] = true }
 
-    const styles = {
-      color,
-      fontSize: Input.sizes[size]
-    };
+    let styles = {}
+    if (!!size) { styles.fontSize = Input.sizes[size] }
+    if (!!color) { styles.color = color }
 
     return (
       <input
@@ -48,12 +50,15 @@ const Input = React.forwardRef(
         id={id}
         style={styles}
         type={inputType}
-        onChange={onChange}
         placeholder={placeholder}
         ref={ref}
         name={name}
         readOnly={readOnly && true}
         autoComplete={autoComplete}
+        autoFocus={autoFocus}
+        spellCheck={spellCheck}
+        onChange={onChange}
+        onBlur={onBlur}
       />
     );
   }
@@ -81,23 +86,29 @@ Input.propTypes = {
   readOnly: PropTypes.bool,
   className: PropTypes.string,
   onChange: PropTypes.func,
+  onBlur: PropTypes.func,
   value: PropTypes.func,
   defaultValue: PropTypes.func,
   ref: PropTypes.func,
   placeholder: PropTypes.string,
   name: PropTypes.string,
+  autoFocus: PropTypes.bool,
   autoComplete: PropTypes.oneOf(["on", "off"]),
+  spellCheck: PropTypes.bool,
+  color: PropTypes.string,
   size: PropTypes.oneOf(["small", "normal", "medium", "large", "xlarge"]),
   id: PropTypes.string
 };
 Input.defaultProps = {
   className: "",
   type: "text",
-  size: "normal",
+  size: null,
   error: false,
   readOnly: false,
-  color: "#000000",
-  autoComplete: "off"
+  color: null,
+  autoFocus: null,
+  autoComplete: "off",
+  spellCheck: null
 };
 Input.sizes = {
   small: "80%",
