@@ -17,12 +17,11 @@ export default function Button({
 }) {
   String.prototype.mod = function() { return !!buttonModule? buttonModule[this] : this }
 
-  const styles = {
-    color,
-    background,
-    fontSize: Button.sizes[size],
-    width: fullWidth ? "100%" : "auto"
-  };
+  let styles = {}
+  if (!!color) { styles.color = color }
+  if (!!background) { styles.background = background }
+  if (!!size) { styles.fontSize = Button.sizes[size] }
+  if (!!fullWidth) { styles.width = "100%" }
 
   const buttonType = "" || (type ? ("button-" + type).mod() : "");
   const buttonLoading = loading ? "loading".mod() : "";
@@ -71,7 +70,7 @@ Button.propTypes = {
   onClick: PropTypes.func
 };
 Button.defaultProps = {
-  size: "normal",
+  size: null,
   type: "",
   loading: false,
   rounded: false,

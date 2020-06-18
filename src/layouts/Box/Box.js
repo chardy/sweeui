@@ -14,7 +14,7 @@ export default function Box({
   clickable,
   children,
 }) {
-  let classes = { ...classNameObject(className), [boxModule["Box"]]: true }
+  let classes = { ...classNameObject(className), "sui-box": true, [boxModule["Box"]]: true }
   
   if (variant == "outlined") {
     classes["sui-outlined"] = true
@@ -56,16 +56,16 @@ export default function Box({
     classes["sui-box-pointer"] = true
   }
 
+  let styles = { overflow: "hidden" }
+  if (!!padding) { styles.padding = padding }
+  if (!!margin) { styles.margin = margin }
+  if (!!background) { styles.background = background }
+  if (!!borderRadius) { styles.borderRadius = borderRadius }
+
   return (
     <div
       className={classNames(classes)}
-      style={{
-        padding,
-        margin,
-        background,
-        borderRadius,
-        overflow: "hidden",
-      }}
+      style={styles}
     >
       {children}
     </div>
@@ -85,9 +85,9 @@ Box.propTypes = {
 Box.defaultProps = {
   className: null,
   variant: "default",
-  padding: "10px",
-  margin: "0",
-  borderRadius: "0px",
-  background: "#FFFFFF",
+  padding: null,
+  margin: null,
+  borderRadius: null,
+  background: null,
   clickable: false,
 };
