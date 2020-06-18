@@ -1,3 +1,8 @@
+.Input {
+  font-size: 100%;
+  color: #000000;
+}
+
 .Input[type="text"],
 .Input[type="password"],
 .Input[type="email"],
